@@ -1,0 +1,6 @@
+{
+  "patientId": "{{PH_PATIENT_ID}}",
+  "homeTest": true,
+  "paymentMode": "PAY_AT_COUNTER",
+  "items": []
+}

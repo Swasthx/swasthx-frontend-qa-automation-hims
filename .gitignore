@@ -1,0 +1,13 @@
+node_modules/
+.auth/
+test-results/
+playwright-report/
+blob-report/
+lighthouse-reports/
+.env
+.env.*
+!.env.example
+
+# HAR recordings contain real API traffic. Run them through scripts/sanitize-har.js
+# and review them before you un-ignore and commit them.
+test-data/har/

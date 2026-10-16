@@ -1,0 +1,37 @@
+{
+  "name": "swasthx-frontend-qa-automation-hims",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone black-box QA automation for the Swasthx HIP frontend (Playwright).",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:webkit": "playwright test --project=webkit",
+    "test:firefox": "playwright test --project=firefox",
+    "test:edge": "playwright test --project=edge",
+    "test:functional": "playwright test tests/functional tests/business-logic",
+    "test:a11y": "playwright test tests/accessibility",
+    "test:visual": "playwright test tests/visual --project=chromium",
+    "test:visual:update": "playwright test tests/visual --project=chromium --update-snapshots",
+    "test:security": "playwright test tests/security",
+    "test:recovery": "playwright test tests/recovery",
+    "test:runtime": "playwright test tests/runtime",
+    "test:compat": "playwright test tests/compatibility",
+    "test:wv": "playwright test tests/web-vitals --project=chromium",
+    "auth:refresh": "node scripts/refresh-auth.js",
+    "auth:manual": "node scripts/capture-auth.js",
+    "report": "playwright show-report",
+    "codegen": "node scripts/codegen.js"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.64.1",
+    "dotenv": "^16.6.1",
+    "lighthouse": "^12.8.2",
+    "puppeteer-core": "^24.17.1"
+  }
+}
