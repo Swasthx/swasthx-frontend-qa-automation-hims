@@ -1,11 +1,10 @@
 import { API_BASE_URL } from '../utils/env.js';
 
-// Every route and endpoint the specs assume, in one place. This repo has no access
-// to the product source, so anything marked TODO(calibrate) is a best guess. Confirm it
-// in DevTools → Network (or `npm run codegen -- <role>`) and fix it here, not in the specs.
+// Every route and endpoint the specs use, in one place. Fix drift here, not in the specs.
 
 export const PATHS = {
   pharmacy: {
+    // Orders have no page of their own: they open as modals from the queue.
     queue: '/pharmacy/queue',
     patient: '/pharmacy/patient',
   },
@@ -13,10 +12,14 @@ export const PATHS = {
 
 export const API = {
   pharmacy: {
-    // TODO(calibrate): endpoint the UI calls to place a pharmacy/home-test order.
-    createOrder: process.env.PH_CREATE_ORDER_API || '/pharmacy/orders',
+    orders: '/pharmacy/orders', //                         staff (JWT), hospital-scoped
+    order: (id) => `/pharmacy/orders/${id}`,
+    phrOrder: (id) => `/pharmacy/phr/orders/${id}`, //     patient app: ?hospitalId&patientId|phone
     // Path fragment of the call that loads the queue. Empty = match every API call.
-    queue: process.env.PH_QUEUE_API || '',
+    queue: process.env.PH_QUEUE_API || '/pharmacy/orders',
+  },
+  diagnostic: {
+    phrBookings: '/diagnostic/phr/bookings', //            patient app lab-test booking
   },
 };
 

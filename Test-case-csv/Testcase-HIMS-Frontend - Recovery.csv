@@ -1,0 +1,26 @@
+TC ID,Category,Module / Area,Fault Scenario,Injection Method,Expected UI Behavior,Data Integrity Expectation,Recovery,Severity
+RFT-OFF-001,Offline & Caching,App-wide,Go offline mid-session,DevTools Network: Offline,Offline banner shown; no infinite spinners,Queued/blocked writes not silently dropped,Manual on reconnect,High
+RFT-OFF-002,Offline & Caching,App shell,Reload while offline,Offline + F5,Cached shell or clear offline page (not browser error),—,Auto on reconnect,Medium
+RFT-OFF-003,Offline & Caching,Queues (socket),Network drops then restores,Toggle offline/online,"Socket reconnects, queue re-syncs to latest","Queue state consistent, no stale rows",Auto,High
+RFT-OFF-004,Offline & Caching,Forms (consult/prescription),Submit while offline,Offline during submit,Blocked with clear message; entered data retained,No partial save; data preserved for retry,Manual retry,High
+RFT-OFF-005,Offline & Caching,Static assets,Repeat load,Inspect cache-control headers,Hashed JS/CSS/images served from cache,—,Auto,Low
+RFT-OFF-006,Offline & Caching,Payment (Razorpay),Offline during payment,Offline mid-checkout,No double charge; clear failure; can resume/verify,"Payment reconciled, no orphan order",Manual,Critical
+RFT-OFF-007,Offline & Caching,Flaky network,Intermittent connectivity,Throttle + random drops,"Graceful retry/degrade, no crash",No duplicate submissions,Auto/Manual,Medium
+RFT-TMO-001,Timeout & Retry,App-wide (axios),"Request hangs, no response",Delayed/stalled mock response,"Times out with error, NOT an infinite spinner",—,Manual retry,Critical
+RFT-TMO-002,Timeout & Retry,App-wide,API 500 / network error,Mock 500 / force fail,Error state + retry affordance; no crash,—,Manual retry,High
+RFT-TMO-003,Timeout & Retry,Auth (axios),401 then refresh + replay,Expire token / mock 401,"Single refresh, original request replayed once (_retry guard)",No infinite retry loop,Auto,High
+RFT-TMO-004,Timeout & Retry,Auth,Refresh token invalid/expired,Mock /auth/refresh 401,"Session cleared, ""Session Expired"" → redirect /login",No stuck half-auth state,Auto→manual login,High
+RFT-TMO-005,Timeout & Retry,Auth,Concurrent 401s during refresh,Fire N parallel requests on expired token,Single-flight refresh; queued requests settle together,No duplicate /auth/refresh calls,Auto,High
+RFT-TMO-006,Timeout & Retry,ABDM routes,Upstream 401 while our JWT valid,Mock ABDM 401,Error propagates to caller; session NOT wiped,Session preserved (no false logout),Auto,High
+RFT-TMO-007,Timeout & Retry,Order create,Timeout after POST (unknown result),Drop response post-submit,Retry reuses idempotencyKey → no duplicate order,Exactly-once order,Critical,
+RFT-TMO-008,Timeout & Retry,Double submit,Rapid clicks under slow network,Slow network + multi-click,Button disabled while in-flight; one request,No duplicate writes,High,
+RFT-TMO-009,Timeout & Retry,Lists/tables,Slow or failed fetch,Delay/fail mock,Skeleton → error with retry; never permanent blank,—,Manual,Medium
+RFT-TMO-010,Timeout & Retry,HPR gate,HPR_NOT_VERIFIED 403 on submit,Mock 403 code,Gate modal/toast fires; per-screen loading cleared,No stuck spinner,Medium,
+RFT-CRA-001,Crash Recovery,App-wide,Render error in a component,Throw in a child component,"ErrorBoundary shows ""Something went wrong"" + Reload/dashboard",—,Manual reload,Critical
+RFT-CRA-002,Crash Recovery,Routing,"Bad URL (#, %22, unknown path)",Navigate to invalid route,NotFound renders (not blank shell) per role catch-all,—,Manual,High
+RFT-CRA-003,Crash Recovery,Session,Hard reload (F5) mid-session,F5 with JWT in sessionStorage,State restored; socket re-handshakes (ensureSocketConnected),No data loss; auth retained,Auto,High
+RFT-CRA-004,Crash Recovery,Socket,Tab backgrounded/slept then resumed,"Background tab, return",Socket reconnects + rejoins rooms; queue current,Consistent state,Auto,Medium
+RFT-CRA-005,Crash Recovery,Unsaved form,Crash/navigate with unsaved consult/prescription,Trigger error / back nav,Warn before loss OR draft preserved,No silent data loss,High,
+RFT-CRA-006,Crash Recovery,ErrorBoundary reset,Recover after error without full reload,Click Reload / dashboard link,App returns to a working route,—,Manual,Medium
+RFT-CRA-007,Crash Recovery,Chunk load failure,Stale chunk 404 after new deploy,Serve 404 for old chunk,Caught → prompt reload for new build (no dead screen),—,Manual reload,Medium
+RFT-CRA-008,Crash Recovery,Long session,Many navigations over long soak,Soak test,Stays responsive; no leak-induced freeze,—,Auto,Low

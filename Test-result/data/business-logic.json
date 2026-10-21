@@ -1,0 +1,106 @@
+{
+  "PH-BIZ-003": {
+    "status": "PASS",
+    "measured": "400",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "{\"status\":false,\"message\":\"HOME_REQUIRES_PREPAID: home-collection bookings must be paid online.\"}"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-BIZ-002": {
+    "status": "PASS",
+    "measured": "400",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "PREPAID requires a payment block; rejected before persist",
+      "{\"status\":false,\"message\":\"payment block is required for PREPAID.\"}"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-BIZ-006": {
+    "status": "NOT RUN",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Owner read returned 401 — seeded order not on QA; set a current PH_PHR_ORDER_ID + PH_PHR_ORDER_PATIENT_ID",
+      "seed order not readable on QA"
+    ],
+    "runAt": "2026-10-21T05:18:51.268Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-BIZ-001": {
+    "status": "PASS",
+    "measured": "subtotal=1092 gst=131.04 discount=0 total=1223.04",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "total should equal subtotal + gst − discount"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-BIZ-006": {
+    "status": "PASS",
+    "measured": "subtotal=1092 gst=131.04 discount=0 total=1223.04",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "total should equal subtotal + gst − discount"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-BIZ-008": {
+    "status": "PASS",
+    "measured": "10 items; leaked: none",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "keys: id,medicineId,name,label,type,image,prices,quantity_info,manufacturer,rx_required,category,inStock"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-BIZ-002": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "6/6 checks passed"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-BIZ-003": {
+    "status": "PASS",
+    "measured": "final path: /login/",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "403 ACCOUNT_DEACTIVATED should block + force logout"
+    ],
+    "runAt": "2026-10-21T05:18:08.621Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

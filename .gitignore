@@ -11,3 +11,10 @@ lighthouse-reports/
 # HAR recordings contain real API traffic. Run them through scripts/sanitize-har.js
 # and review them before you un-ignore and commit them.
 test-data/har/
+
+# Web Vitals raw output (Lighthouse JSON/HTML per run); webvitalResult.md stays tracked
+results/
+Swasthx_HIP_Frontend/
+
+# Generated downloadable report bundle (regenerate from Test-result/)
+Test-result_*.zip

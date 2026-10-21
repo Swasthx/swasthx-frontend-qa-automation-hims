@@ -19,6 +19,37 @@ export function blockingViolations(results, impacts = BLOCKING_IMPACTS) {
   return results.violations.filter((v) => impacts.includes(v.impact));
 }
 
+export function violationsByRule(results, ruleIds) {
+  return results.violations.filter((v) => ruleIds.includes(v.id));
+}
+
+/**
+ * Scans one authenticated route with axe, caching by role+route so several TCs on the same
+ * screen reuse one navigation. `attach` lets the caller attach the raw results to its report.
+ */
+const scanCache = new Map();
+export function scanRoute(asRole, role, route, { settleFn } = {}) {
+  const key = `${role}|${route}`;
+  if (!scanCache.has(key)) {
+    scanCache.set(
+      key,
+      (async () => {
+        const page = await asRole(role);
+        try {
+          await page.goto(route);
+          if (settleFn) await settleFn(page);
+          const AxeBuilder = (await import('@axe-core/playwright')).default;
+          let builder = new AxeBuilder({ page }).withTags(WCAG_TAGS).exclude('iframe[src*="recaptcha"]');
+          return { results: await builder.analyze(), finalUrl: page.url() };
+        } finally {
+          await page.context().close();
+        }
+      })(),
+    );
+  }
+  return scanCache.get(key);
+}
+
 // One readable line per violation, so the assertion message alone says what to fix.
 export function formatViolations(violations) {
   return violations

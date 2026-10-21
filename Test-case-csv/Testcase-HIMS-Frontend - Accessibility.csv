@@ -1,0 +1,39 @@
+TC ID,Module,Screen / Component,WCAG SC,Level,Method,Assistive Tech / Env,Scenario / Steps,Expected Result,Severity,Tool
+GEN-A11Y-001,App-wide,Every route,4.1.1 / mixed,AA,Automated-axe,axe-core,Run axe scan on each route,0 serious/critical violations,High,axe DevTools / Lighthouse
+GEN-A11Y-002,App-wide,index.html <html>,3.1.1 Language of Page,A,Manual,DOM,Inspect root element,"lang=""en"" set",Medium,manual
+GEN-A11Y-003,App-wide,Per-route title (react-helmet),2.4.2 Page Titled,A,Screen-reader,NVDA + Chrome,Navigate routes,"Unique, descriptive <title>",Medium,NVDA
+GEN-A11Y-004,App-wide,Landmarks / skip link,2.4.1 Bypass Blocks,A,Keyboard/SR,NVDA,Tab from top of page,Skip-to-content + header/nav/main landmarks,Medium,NVDA / axe
+GEN-A11Y-005,App-wide,All interactive elements,2.4.7 Focus Visible,AA,Keyboard,Keyboard-only,Tab through page,Visible focus ring everywhere,High,manual
+GEN-A11Y-006,App-wide,Text + buttons (tailwind/daisyui/antd),1.4.3 Contrast (Minimum),AA,Automated+Manual,TPGi CCA,Sample text/buttons,"≥4.5:1 text, ≥3:1 large text",High,axe / CCA
+GEN-A11Y-007,App-wide,"Borders, icons, focus ring",1.4.11 Non-text Contrast,AA,Manual,TPGi CCA,Check UI component contrast,≥3:1,Medium,CCA
+GEN-A11Y-008,App-wide,Responsive layout,1.4.10 Reflow,AA,Manual,Browser zoom,Zoom to 400% / 320px width,"No horizontal scroll, no content loss",Medium,manual
+GEN-A11Y-009,App-wide,Text scaling,1.4.4 Resize Text,AA,Manual,Browser zoom,Text zoom 200%,"Readable, no clipping/overlap",Low,manual
+GEN-A11Y-010,App-wide,"Icon-only buttons (AddBtn/EditBtn/CustomModal close, lucide/react-icons)",1.1.1 / 4.1.2,A,Screen-reader,NVDA,Tab to icon buttons,Each exposes an accessible name,High,NVDA / axe
+GEN-A11Y-011,App-wide,CustomModal / antd Modal,2.1.2 No Keyboard Trap / 4.1.2,A,Keyboard/SR,NVDA,Open a modal,"Focus trapped, Esc closes, aria-modal, focus returns on close",High,NVDA / manual
+GEN-A11Y-012,App-wide,Toasts (react-hot-toast / react-toastify),4.1.3 Status Messages,AA,Screen-reader,NVDA,Trigger success/error toast,"Announced via aria-live, no focus steal",Medium,NVDA
+GEN-A11Y-013,App-wide,Loading/spinner states,4.1.3 Status Messages,AA,Screen-reader,NVDA,Load data,aria-busy / live region announces loading→loaded,Low,NVDA
+GEN-A11Y-014,App-wide,GoogleTranslate widget,"4.1.2 Name, Role, Value",A,Keyboard/SR,NVDA,Operate language switcher,Labeled and keyboard operable,Low,NVDA
+AUTH-A11Y-001,Login,Login (phone/OTP/reCAPTCHA),3.3.2 Labels or Instructions,A,Screen-reader,NVDA,Tab through fields,Inputs labeled; OTP boxes announced,High,NVDA / axe
+AUTH-A11Y-002,Login,Login validation,3.3.1 Error Identification,A,Screen-reader,NVDA,Submit invalid,Errors tied to field (aria-describedby) & announced,High,NVDA
+SA-A11Y-001,SuperAdmin,HospitalAnalytics (recharts),1.1.1 Non-text Content,A,Screen-reader,NVDA,View charts,Accessible data summary / table alternative,Medium,NVDA
+SA-A11Y-002,SuperAdmin,Orders / ManageUser tables + filters,1.3.1 Info and Relationships,A,Screen-reader,NVDA,Navigate table,"th scope, caption; filters labeled",High,axe / NVDA
+SA-A11Y-003,SuperAdmin,ManageHospital form,3.3.2 Labels or Instructions,A,Screen-reader,NVDA,Fill form,Labels + instructions present,Medium,axe
+AD-A11Y-001,Admin,AuditLogTablePanel,1.3.1 Info and Relationships,A,Screen-reader,NVDA,Navigate table,"Row/col associations, header scope",High,axe / NVDA
+AD-A11Y-002,Admin,AuditLog sortable headers,"4.1.2 Name, Role, Value",AA,Keyboard/SR,NVDA,Sort a column,aria-sort set; keyboard operable,Medium,NVDA
+AD-A11Y-003,Admin,ShiftCalendar (dnd-kit),2.1.1 Keyboard,A,Keyboard,Keyboard-only,Reorder a shift via keyboard,Keyboard DnD works (keyboard sensor),High,manual
+AD-A11Y-004,Admin,RBACPermission matrix,1.3.1 / 4.1.2,A,Screen-reader,NVDA,Navigate permission toggles,Each toggle named with row+column context,High,NVDA
+AD-A11Y-005,Admin,Config modals (TokenPolicy / ServiceCatalog),3.3.1 Error Identification,A,Screen-reader,NVDA,Submit invalid,Labels + errors announced,High,axe / NVDA
+RCP-A11Y-001,Reception,ReceptionQueue + token actions,2.1.1 / 4.1.2,A,Keyboard/SR,NVDA,Operate queue actions,"Keyboard operable, buttons named",High,NVDA
+RCP-A11Y-002,Reception,ReceptionQueue live updates,4.1.3 Status Messages,AA,Screen-reader,NVDA,New token arrives,"Announced via live region, non-disruptive",Medium,NVDA
+RCP-A11Y-003,Reception,ReceptionPatient search,3.3.2 / 4.1.3,A,Screen-reader,NVDA,Search patients,Labeled input; result count announced,Medium,NVDA
+DOC-A11Y-001,Doctor,ConsultWorkspace prescription form,3.3.2 / 1.3.1,A,Screen-reader,NVDA,Tab through fields,Inputs labeled & grouped (fieldset/legend),High,NVDA / axe
+DOC-A11Y-002,Doctor,ConsultWorkspace custom selects / med rows,"4.1.2 Name, Role, Value",AA,Screen-reader,NVDA,Operate custom controls,Role + name + value exposed,High,NVDA
+DOC-A11Y-003,Doctor,DoctorSchedulePage calendar,2.1.1 Keyboard,A,Keyboard,Keyboard-only,"Navigate/select slots, no mouse",Fully keyboard operable,High,manual
+DOC-A11Y-004,Doctor,DoctorDashboard (recharts),1.1.1 Non-text Content,A,Screen-reader,NVDA,View dashboard charts,Text alternative / summary,Medium,NVDA
+DIAG-A11Y-001,Diagnostic,SectionAvailability grid,1.3.1 / 4.1.2,A,Screen-reader,NVDA,Toggle availability slots,Each cell named: section + time + state,High,NVDA
+DIAG-A11Y-002,Diagnostic,DiagnosticQueue,2.1.1 / 4.1.3,A,Keyboard/SR,NVDA,Operate queue,Keyboard operable + updates announced,Medium,NVDA
+DIAG-A11Y-003,Diagnostic,Operator forms,3.3.1 Error Identification,A,Screen-reader,NVDA,Submit invalid,Errors announced & associated,Medium,axe
+PH-A11Y-001,Pharmacy,PharmacyQueue + dispense actions,2.1.1 / 4.1.2,A,Keyboard/SR,NVDA,Operate queue actions,"Keyboard operable, named",High,NVDA
+PH-A11Y-002,Pharmacy,Invoice (@react-pdf-viewer),1.1.1 / 2.1.1,A,Screen-reader/Keyboard,NVDA,Open & view invoice,Document readable by SR; keyboard controls,Medium,NVDA
+PH-A11Y-003,Pharmacy,PharmacyPatient search/table,1.3.1 / 3.3.2,A,Screen-reader,NVDA,Navigate table,Table semantics + labeled search,Medium,axe
+PH-A11Y-004,Pharmacy,PharmacyPayment flow,3.3.1 / 4.1.2,A,Screen-reader,NVDA,Complete payment,"Labeled fields, errors announced, status conveyed",High,NVDA

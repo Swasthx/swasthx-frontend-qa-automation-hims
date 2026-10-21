@@ -1,0 +1,33 @@
+TC ID,Module,Component / Area,Scenario / Interaction,Load / Condition,Metric,Target / Budget,Measured,Pass/Fail,Tool
+SA-RUN-001,SuperAdmin,HospitalAnalytics (recharts),Initial chart render,12-month dataset · CPU 4×,Mount commit duration,≤ 300 ms,—,,React Profiler
+SA-RUN-002,SuperAdmin,Orders table,Scroll list,"1,000 orders · CPU 4×",Long tasks >50ms · FPS,"0 tasks, ≥ 55 fps",—,—,Chrome Perf panel
+SA-RUN-003,SuperAdmin,managepaitent table,Type in search,"1,000 rows · CPU 4×",INP · re-render scope,"≤ 200 ms, debounced, list-only re-render",—,—,React Profiler
+SA-RUN-004,SuperAdmin,Medicine management,Filter / sort,large catalog · CPU 4×,Interaction latency,≤ 200 ms,—,—,Chrome Perf panel
+AD-RUN-001,Admin,AuditLogTablePanel,Scroll list,"1,000 rows · CPU 4×",Long tasks >50ms · FPS,"0 tasks, ≥ 55 fps",—,—,Chrome Perf panel
+AD-RUN-002,Admin,AuditLogTablePanel,Apply filter,"1,000 rows · CPU 4×",INP · commit duration,≤ 200 ms,—,—,React Profiler
+AD-RUN-003,Admin,OperationalDashboard (recharts),Initial render + auto-refresh,all widgets · CPU 4×,Commit duration · layout thrash,"≤ 300 ms, no thrash",—,—,React Profiler
+AD-RUN-004,Admin,ShiftCalendar (dnd-kit),Drag a shift,full week grid · CPU 4×,FPS during drag,"≥ 55 fps, no jank",—,—,Chrome Perf panel
+AD-RUN-005,Admin,RBACPermission matrix,Toggle one permission,full matrix · CPU 4×,Re-render scope,only toggled cell/row,—,—,React Profiler + why-did-you-render
+AD-RUN-006,Admin,Analytics (recharts),Switch date range,CPU 4×,INP,≤ 200 ms,—,—,React Profiler
+RCP-RUN-001,Reception,ReceptionQueue (socket),Live queue updates,20 events/s · CPU 4×,Responsiveness · FPS,"≤ 200 ms, ≥ 55 fps, no freeze",—,—,Chrome Perf panel
+RCP-RUN-002,Reception,ReceptionQueue,Token action click,CPU 4×,INP,≤ 200 ms,—,—,web-vitals INP
+RCP-RUN-003,Reception,ReceptionPatient,Type search query,500 patients · CPU 4×,Debounce · re-render scope,"≤ 200 ms, results-only re-render",—,—,React Profiler
+RCP-RUN-004,Reception,ReceptionQueue,Navigate in/out ×15,—,Memory / socket-listener leak,"heap stable ±5%, listeners removed",—,—,Chrome Memory
+DOC-RUN-001,Doctor,ConsultWorkspace,Type in prescription fields,CPU 4×,Input latency / INP,"≤ 200 ms, no dropped keystrokes",—,—,Chrome Perf panel
+DOC-RUN-002,Doctor,ConsultWorkspace,Add medicine rows,grows to 30 rows · CPU 4×,Re-render scope,only new/changed row re-renders,—,—,React Profiler
+DOC-RUN-003,Doctor,DoctorSchedulePage,Scroll / navigate weeks,CPU 4×,FPS,≥ 55 fps,—,—,Chrome Perf panel
+DOC-RUN-004,Doctor,GeneralDoctorQueue (socket),Live updates,20 events/s · CPU 4×,Responsiveness · FPS,"≤ 200 ms, no jank",—,—,Chrome Perf panel
+DOC-RUN-005,Doctor,DoctorDashboard (recharts),Initial render,CPU 4×,Commit duration,≤ 300 ms,—,—,React Profiler
+DOC-RUN-006,Doctor,ConsultWorkspace,Mount / unmount ×15,—,Memory leak,heap stable ±5%,—,—,Chrome Memory
+DIAG-RUN-001,Diagnostic,DiagnosticQueue (socket),Live updates,20 events/s · CPU 4×,Responsiveness · FPS,"≤ 200 ms, ≥ 55 fps",—,—,Chrome Perf panel
+DIAG-RUN-002,Diagnostic,DiagnosticOperatorQueue,Scroll queue,large queue · CPU 4×,Long tasks >50ms,0 tasks,—,—,Chrome Perf panel
+DIAG-RUN-003,Diagnostic,SectionAvailability grid,Toggle slots,full grid · CPU 4×,Re-render scope,only toggled cell,—,—,React Profiler
+DIAG-RUN-004,Diagnostic,DiagnosticPatient,Type search,CPU 4×,INP / debounce,≤ 200 ms,—,—,React Profiler
+PH-RUN-001,Pharmacy,PharmacyQueue (socket),Live updates,20 events/s · CPU 4×,Responsiveness · FPS,"≤ 200 ms, ≥ 55 fps",—,—,Chrome Perf panel
+PH-RUN-002,Pharmacy,PharmacyPatient,Search / paging,500 patients · CPU 4×,INP,"≤ 200 ms, debounced",—,—,React Profiler
+PH-RUN-003,Pharmacy,Invoice (@react-pdf-viewer),Open invoice,multi-page PDF · CPU 4×,Open-to-interactive · main-thread freeze,"≤ 1.5 s, no freeze >200 ms",—,—,Chrome Perf panel
+PH-RUN-004,Pharmacy,PharmacyQueue,Navigate in/out ×15,—,Memory / socket-listener leak,"heap stable ±5%, listeners removed",—,—,Chrome Memory
+PH-RUN-005,Pharmacy,CareContextTable,Scroll / expand rows,CPU 4×,FPS,≥ 55 fps,—,—,Chrome Perf panel
+GEN-RUN-001,App-wide,antd Modal (shared),Open / close ×50,—,Detached-node growth,no leak (nodes released),—,—,Chrome Memory
+GEN-RUN-002,App-wide,Route navigation,Switch between modules,CPU 4×,Total Blocking Time on nav,TBT < 200 ms,—,—,Chrome Perf panel
+GEN-RUN-003,App-wide,Socket subscriptions,Reconnect / re-subscribe,drop+reconnect,Duplicate listeners,listener count stable,—,—,Chrome Memory / console

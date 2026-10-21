@@ -1,0 +1,25 @@
+TC ID,Module,Feature,Input / Precondition,Action,Expected Result,Reference
+PH-BIZ-001,Pharmacy,Quote GST/total calc,"cart lines, hospitalId",View cart/quote,totalAmount = subtotal + gstTotal; GST per tax rules,Backend PH-FUN-001
+PH-BIZ-002,Pharmacy,PREPAID requires payment,"paymentType=PREPAID, no payment",Confirm order,"Blocked: ""payment block required""",PH-FUN-008
+PH-BIZ-003,Pharmacy,homeTest must be PREPAID,collectionMode=home + PAY_AT_COUNTER,Confirm order,Blocked: HOME_REQUIRES_PREPAID,PH-FUN-009
+PH-BIZ-004,Pharmacy,PAY_AT_COUNTER order,paymentType=counter,Create order,"Status PENDING, no invoice yet",PH-FUN-011
+PH-BIZ-005,Pharmacy,Idempotent order create,same idempotencyKey x2,Submit twice,"2nd returns the same order, no duplicate",PH-FUN-010
+PH-BIZ-006,Pharmacy,Order scoped to patient,patient A vs B,View order list/detail,Only own orders; B cannot read A's,PH-FUN-012/014
+PH-BIZ-007,Pharmacy,Invoice readiness gating,counter unpaid vs paid,View invoice,invoiceReady=false until paid; download gated,PH-FUN-015/017
+PH-BIZ-008,Pharmacy,Patient-safe catalog,medicine detail,View medicine,Internal fields (stock/composition) hidden,PH-FUN-006
+GEN-BIZ-001,Auth/RBAC,Permission gating (read/write/override),permissions from /auth/refresh,Attempt write without write perm,Action blocked; read-only respected,permissions model
+GEN-BIZ-002,Auth,Role to home redirect,role in sessionStorage,Log in as each role,Routed to correct module (doctor to /doctor, super admin to /superadmin),App.jsx redirect
+GEN-BIZ-003,Auth,Account deactivated,ACCOUNT_DEACTIVATED,Any request,Blocked + forced logout,axios.js
+GEN-BIZ-004,Auth,HPR verification gate,HPR_NOT_VERIFIED,Doctor booking / diagnostic submit,Blocked via gate modal until HPR confirmed,hprGate
+GEN-BIZ-005,Auth,Idle timeout,inactivity period,Stay idle,"Auto logout, session cleared",useIdleTimeout
+GEN-BIZ-006,Payment,Amount / GST / discount calc,"items, tax, discount",Checkout,Final = items + tax - discount; matches server,BRD
+DOC-BIZ-001,Doctor,Appointment booking rules,"slot availability, fee",Book appointment,Only available slots bookable; fee applied; payment entry created,BRD
+DOC-BIZ-002,Doctor,Prescription record types,create record,Save record,Only doctor-allowed record types; required fields enforced,BRD
+DIAG-BIZ-001,Diagnostic,Section availability,operator shift/section,Set availability,Unavailable section/time not bookable,BRD
+DIAG-BIZ-002,Diagnostic,Test to doctor assignment,test/doctor mapping,Assign test,Only valid mappings allowed,BRD
+RCP-BIZ-001,Reception,Token generation,queue + token policy,Generate token,"Token issued per policy (sequence, cap, slot)",TokenPolicy
+AD-BIZ-001,Admin,Service catalog tax,tax rate,Save tax,"Tax within 0-100, applied to catalog",ServiceCatalogTax
+AD-BIZ-002,Admin,Discount tiers,tier thresholds,Configure tiers,Non-overlapping tiers; discount caps enforced,DiscountTiers
+AD-BIZ-003,Admin,Token policy rules,policy config,Save policy,Invalid rules rejected before save,TokenPolicy
+SA-BIZ-001,SuperAdmin,Medicine/pricing,"price, composition",Add/edit medicine,Required fields + price >= 0 enforced,BRD
+SA-BIZ-002,SuperAdmin,Rewards / coupons,coupon rules,Create coupon,Validity/expiry/usage limits enforced,Rewards BRD

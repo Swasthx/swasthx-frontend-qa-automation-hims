@@ -1,0 +1,145 @@
+{
+  "RFT-OFF-005": {
+    "status": "FAIL",
+    "measured": "Cache-Control: public, max-age=0, s-maxage=31536000",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Browser max-age=0; hashed assets are re-validated on every load (not served straight from cache)",
+      "Error: hashed asset not browser-cacheable: public, max-age=0, s-maxage=31536000"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-CRA-002": {
+    "status": "PASS",
+    "measured": "NotFound shown",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "final path: /pharmacy/this-route-does-not-exist-zzz/",
+      "Content present"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-OFF-001": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "offline banner shown: false",
+      "stuck on spinner: false",
+      "no uncaught errors: true",
+      "No offline indicator — user gets no feedback that the network dropped"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-TMO-004": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "final path: /login/",
+      "Storage-clear on logout is covered by GEN-SEC-010 (not asserted here: the test re-seeds sessionStorage on every navigation)"
+    ],
+    "runAt": "2026-10-19T07:19:39.774Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-OFF-002": {
+    "status": "FAIL",
+    "measured": "browser error",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "reload failed: page.reload: net::ERR_INTERNET_DISCONNECTED",
+      "No service worker / offline cache → raw browser error on offline reload",
+      "Error: offline reload shows a raw browser error (no offline shell / service worker)"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-CRA-003": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "after reload: /pharmacy/profile/",
+      "token retained: true"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-TMO-001": {
+    "status": "PASS",
+    "measured": "resolved/empty",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "spinner elements after 22s: 0",
+      "main content length: 260"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-TMO-006": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "injected 401s: 1",
+      "still on: /pharmacy/queue/",
+      "token retained: true"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-TMO-002": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "error message: false",
+      "retry control: false",
+      "Shows an EMPTY state (\"no prescriptions…\"), indistinguishable from a real 500",
+      "no uncaught JS errors: true",
+      "Error: no error message and no retry control on API 500 (app treats a server error like \"no data\")"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RFT-TMO-009": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "permanent blank: false",
+      "error-or-retry shown: false",
+      "Falls back to an empty state, not an error-with-retry",
+      "Error: failed fetch shows no error state and no retry (only an empty state)"
+    ],
+    "runAt": "2026-10-19T07:18:12.063Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

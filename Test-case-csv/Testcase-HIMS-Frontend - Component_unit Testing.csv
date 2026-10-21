@@ -1,0 +1,13 @@
+TC ID,Module,Component,Props / Input State,Interaction,Expected Render / Behavior,Edge / Negative Cases,Tool
+GEN-CMP-001,App-wide,CustomModal,"open=true, children",Press Esc / click overlay,"onClose fires, modal unmounts",open=false renders nothing,RTL + Vitest
+GEN-CMP-002,App-wide,CustomInputPatient,"value, onChange, rules",Type valid/invalid,"Formats value, shows error on invalid",empty/max-length,RTL + Vitest
+GEN-CMP-003,App-wide,TagInput,tags=[],Add + remove a tag,"Tag added, removed, onChange emits",duplicate / empty tag rejected,RTL + Vitest
+GEN-CMP-004,App-wide,CustomImageUpload,"accept, maxSize",Select file,Valid image accepted,wrong MIME / oversized rejected,RTL + Vitest
+AD-CMP-001,Admin,ServiceCatalogTaxModal,item=null (create),Submit empty,"Required errors shown, onSave not called","tax>100, negative price",RTL + Vitest
+AD-CMP-002,Admin,TokenPolicyRuleCard,rule object,Click edit,"Renders rule, edit callback fires",missing fields fallback,RTL + Vitest
+AD-CMP-003,Admin,AuditLogStats,raw log array,—,Computes/format counts correctly,empty array → zeros,Vitest
+PH-CMP-001,Pharmacy,orderStage status map,each status value,—,Maps status → label + color,unknown status → safe default,Vitest
+PH-CMP-002,Pharmacy,InvoiceModal,line items,—,Subtotal/GST/total computed & rendered,empty items / rounding,RTL + Vitest
+DOC-CMP-001,Doctor,ConsultWorkspace (med rows),initial rows,Add / remove row,"Row added/removed, state consistent",remove last row guard,RTL + Vitest
+RCP-CMP-001,Reception,Queue token card,token props,—,Status badge + patient info render,missing patient data fallback,RTL + Vitest
+GEN-CMP-005,App-wide,timeSlotFunction (util),time range input,—,Returns correct slot array,DST / invalid range,Vitest

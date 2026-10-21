@@ -1,44 +1,73 @@
 import { expect } from '@playwright/test';
-import { escapeRegex } from '../utils/page.js';
+import { PATHS } from '../fixtures/app-map.js';
 
-// Amount with currency symbol and exactly 2 decimals. Accepts Indian (1,23,456.00) and
-// western (123,456.00) grouping as well as ungrouped digits.
-export function currencyRegex(symbol = process.env.CURRENCY_SYMBOL || '₹') {
-  return new RegExp(`${escapeRegex(symbol)}\\s?-?(?:\\d{1,3}(?:,\\d{2,3})+|\\d+)\\.\\d{2}`, 'g');
-}
+// ₹ amount with Indian (1,23,456) or western grouping and optional paise.
+export const AMOUNT = '₹\\s?\\d{1,3}(?:,\\d{2,3})*(?:\\.\\d{1,2})?';
+export const STRICT_AMOUNT = /^₹\s?\d{1,3}(?:,\d{2,3})*\.\d{2}$/; // always 2 decimals
 
 export const parseAmount = (formatted) => Number(formatted.replace(/[^\d.-]/g, ''));
 
-// TODO(calibrate): label wording on the cart summary. Prefer data-testid if the app adds them.
-export const CART_LABELS = {
-  subtotal: /^\s*sub[\s-]?total/i,
-  gst: /^\s*(gst|tax)\b/i,
-  total: /^\s*(grand\s+|net\s+)?total\b/i,
-};
-
-export class PharmacyPage {
+export class PharmacyQueuePage {
   constructor(page) {
     this.page = page;
   }
 
+  async goto() {
+    await this.page.goto(PATHS.pharmacy.queue);
+    await expect(this.page.getByRole('heading', { name: 'Pharmacy Queue', level: 1 })).toBeVisible();
+  }
+
+  /** Active Queue tabs: "Order In progress", "Order Ready", "Order Delivered", "Cancelled", "Uncollected". */
+  async openActiveTab(name) {
+    await this.page.getByRole('button', { name: new RegExp(`^${name}\\b`) }).click();
+  }
+
+  /** An order card, found by its visit id (e.g. P-20260914-0001). Cards don't show the order code. */
+  card(visitId) {
+    return this.page
+      .locator('div')
+      .filter({ hasText: visitId })
+      .filter({ has: this.page.getByRole('button', { name: 'More actions' }) })
+      .last();
+  }
+
+  /** Card → More actions → View Details. Returns the "Order details" dialog. */
+  async openOrderDetails(visitId) {
+    const card = this.card(visitId);
+    await expect(card, `no order card with visit id ${visitId} in this tab`).toBeVisible();
+    await card.getByRole('button', { name: 'More actions' }).click();
+    await this.page.getByRole('button', { name: 'View Details', exact: true }).click();
+    const dialog = this.page.getByRole('dialog').filter({ has: this.page.getByRole('heading', { name: 'Order details' }) });
+    await expect(dialog).toBeVisible();
+    return dialog;
+  }
+
   /**
-   * Finds the label, then walks up the DOM until an ancestor also contains an amount
-   * (handles <dt>/<dd>, flex rows and table rows). Returns the last amount in that row.
+   * Reads the bill summary under the medicines table:
+   *   Sub Total ₹1,233 · Item Discounts (0%) ₹0 · CGST (6%) ₹73.98 · SGST (6%) ₹73.98 · Total Amount (IND ₹) ₹1,380.96
    */
-  async summaryAmount(labelRegex) {
-    const label = this.page.getByText(labelRegex).first();
-    await expect(label, `cart summary label ${labelRegex} not found`).toBeVisible();
-    const source = currencyRegex().source;
-    const rowText = await label.evaluate((el, src) => {
-      const re = new RegExp(src);
-      for (let node = el, depth = 0; node && depth < 5; node = node.parentElement, depth++) {
-        if (re.test(node.innerText)) return node.innerText;
-      }
-      return el.innerText;
-    }, source);
-    const matches = rowText.match(currencyRegex());
-    expect(matches, `no currency-formatted amount next to "${rowText.trim()}"`).not.toBeNull();
-    const formatted = matches.at(-1);
-    return { formatted, value: parseAmount(formatted) };
+  async readBillSummary(dialog) {
+    const full = (await dialog.innerText()).replace(/\s+/g, ' ');
+    const orderCode = /Order ID\s+(\S+)/.exec(full)?.[1];
+    // CGST/SGST/Subtotal are also table column headers; parse only the summary block below.
+    const start = full.lastIndexOf('Sub Total');
+    expect(start, '"Sub Total" not found in order details').toBeGreaterThanOrEqual(0);
+    const text = full.slice(start);
+    const grab = (label) => {
+      const m = new RegExp(`${label}[^₹]*?(?:\\([^)]*\\)\\s*)?(${AMOUNT})(?!\\d)`).exec(text);
+      expect(m, `"${label}" amount not found in order details`).not.toBeNull();
+      return { formatted: m[1], value: parseAmount(m[1]) };
+    };
+    // "Total Amount (IND ₹) ₹1,380.96": skip the ₹ inside the label's parentheses.
+    const total = /Total Amount\s*\([^)]*\)\s*(₹\s?\d[\d,]*(?:\.\d{1,2})?)/.exec(text);
+    expect(total, '"Total Amount" not found in order details').not.toBeNull();
+    return {
+      orderCode,
+      subtotal: grab('Sub Total'),
+      discount: grab('Item Discounts'),
+      cgst: grab('CGST'),
+      sgst: grab('SGST'),
+      total: { formatted: total[1], value: parseAmount(total[1]) },
+    };
   }
 }

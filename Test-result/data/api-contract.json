@@ -1,0 +1,116 @@
+{
+  "GEN-API-001": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "All cached role sessions carry token, refreshToken, role and an array permissions"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-API-002": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "token=true refreshToken=true role=reception permissions=array(true)"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-API-003": {
+    "status": "PASS",
+    "measured": "200 · 10 items · pagination=true",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Only patient-safe fields",
+      "sample keys: id,medicineId,name,label,type,image,prices,quantity_info,manufacturer,rx_required,category,inStock"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-API-001": {
+    "status": "PASS",
+    "measured": "subtotal=728 gst=87.36 total=815.36",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "body: {\"hospitalId\":\"IN3610001058\",\"lines\":[{\"medicineId\":\"M4979553207\",\"quantity\":2}]}"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-API-006": {
+    "status": "PASS",
+    "measured": "200 · 4 rows",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-API-005": {
+    "status": "FAIL",
+    "measured": "500 · {\"message\":\"Internal server error\"}",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Endpoint returns a server error for the pharmacy role — the UI medicine list would be empty/broken",
+      "Error: /pharmacy/medicines returned 500"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-API-002": {
+    "status": "FAIL",
+    "measured": "250 · no array",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Returns non-standard HTTP 250 with {message} and no data array",
+      "Error: expected 200, got 250"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-API-004": {
+    "status": "PASS",
+    "measured": "200 · keys=invoiceReady,invoiceSource,orderId,invoiceNumber,date,paymentMode,paymentStatus,careContextId",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-API-012": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "/pharmacy/phr/medicines: 200 arrayUnderData=true bare=false",
+      "/pharmacy/payment/getAllPaymentsDetails: 200 arrayUnderData=true bare=false"
+    ],
+    "runAt": "2026-10-19T07:56:03.449Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

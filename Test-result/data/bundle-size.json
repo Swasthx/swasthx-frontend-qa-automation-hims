@@ -1,0 +1,183 @@
+{
+  "BND-001": {
+    "status": "FAIL",
+    "measured": "2812.3 KB gzip (11378.7 KB raw)",
+    "notes": [
+      "Budget ≤ 300 KB gzip. App is not code-split, so the whole app ships on first load."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-002": {
+    "status": "PASS",
+    "measured": "62.3 KB gzip",
+    "notes": [
+      "Budget ≤ 100 KB gzip (antd + tailwind + slick + leaflet)."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-003": {
+    "status": "FAIL",
+    "measured": "11440.9 KB actually transferred",
+    "notes": [
+      "Budget ≤ 400 KB. Cold /login pulls the entire SPA bundle, not just a shell."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-005": {
+    "status": "FAIL",
+    "measured": "1 asset(s) served uncompressed",
+    "notes": [
+      "/assets/index-10e6cbe6.js served with no Content-Encoding (11378.7 KB) — likely over the CDN's compression size limit"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-004": {
+    "status": "PASS",
+    "measured": "+0.0% vs baseline",
+    "baselineGzip": 2879843,
+    "notes": [
+      "baseline 2812.3 KB → now 2812.3 KB"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-010": {
+    "status": "FAIL",
+    "measured": "not code-split",
+    "notes": [
+      "SuperAdmin is not in its own async chunk — single bundle: 1 JS file(s), 11378.7 KB raw. Static import in App.jsx."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-011": {
+    "status": "FAIL",
+    "measured": "not code-split",
+    "notes": [
+      "Admin is not in its own async chunk — single bundle: 1 JS file(s), 11378.7 KB raw. Static import in App.jsx."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-012": {
+    "status": "FAIL",
+    "measured": "not code-split",
+    "notes": [
+      "Doctor is not in its own async chunk — single bundle: 1 JS file(s), 11378.7 KB raw. Static import in App.jsx."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-013": {
+    "status": "FAIL",
+    "measured": "not code-split",
+    "notes": [
+      "Diagnostic is not in its own async chunk — single bundle: 1 JS file(s), 11378.7 KB raw. Static import in App.jsx."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-014": {
+    "status": "FAIL",
+    "measured": "not code-split",
+    "notes": [
+      "Reception is not in its own async chunk — single bundle: 1 JS file(s), 11378.7 KB raw. Static import in App.jsx."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-015": {
+    "status": "FAIL",
+    "measured": "not code-split",
+    "notes": [
+      "Pharmacy is not in its own async chunk — single bundle: 1 JS file(s), 11378.7 KB raw. Static import in App.jsx."
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-020": {
+    "status": "FAIL",
+    "measured": "in initial bundle",
+    "notes": [
+      "PDF libs (jspdf/html2canvas/pdfjs/@react-pdf) ships in the initial bundle (should load only on its screen): pdfjs-dist, @react-pdf"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-021": {
+    "status": "FAIL",
+    "measured": "in initial bundle",
+    "notes": [
+      "@react-pdf-viewer ships in the initial bundle (should load only on its screen): @react-pdf"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-022": {
+    "status": "FAIL",
+    "measured": "in initial bundle",
+    "notes": [
+      "xlsx (SheetJS) ships in the initial bundle (should load only on its screen): xlsx"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-023": {
+    "status": "FAIL",
+    "measured": "in initial bundle",
+    "notes": [
+      "recharts ships in the initial bundle (should load only on its screen): recharts"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-024": {
+    "status": "FAIL",
+    "measured": "in initial bundle",
+    "notes": [
+      "leaflet ships in the initial bundle (should load only on its screen): leaflet"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-025": {
+    "status": "FAIL",
+    "measured": "in initial bundle",
+    "notes": [
+      "video-react ships in the initial bundle (should load only on its screen): video-react"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-030": {
+    "status": "FAIL",
+    "measured": "moment + dayjs",
+    "notes": [
+      "Two date libraries ship: moment + dayjs — migrate moment → dayjs"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-031": {
+    "status": "FAIL",
+    "measured": "react-toastify + sweetalert",
+    "notes": [
+      "Multiple toast/alert libs: react-toastify + sweetalert — consolidate"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  },
+  "BND-032": {
+    "status": "FAIL",
+    "measured": "html2canvas + html2canvas-pro",
+    "notes": [
+      "Both ship — keep one: html2canvas + html2canvas-pro"
+    ],
+    "runAt": "2026-10-19T06:34:36.177Z",
+    "env": "https://qa-doctor.swasthx.com"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "PH-UX-002": {
+    "status": "NOT RUN",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Seed order P-20260924-0002 not present on QA (queue empty or data changed) — set a current PH_ORDER_VISIT_ID"
+    ],
+    "runAt": "2026-10-19T09:00:19.826Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-UX-008": {
+    "status": "FAIL",
+    "measured": "title=\"Swasthx\", activeNav=true",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Page title is the generic \"Swasthx\" (not route-specific — see GEN-A11Y-003)",
+      "Active nav item is marked",
+      "Error: page title is generic \"Swasthx\" rather than route-specific"
+    ],
+    "runAt": "2026-10-19T08:59:18.514Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-UX-005": {
+    "status": "FAIL",
+    "measured": "no error affordance",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "error message: false",
+      "retry: false",
+      "raw dump: false",
+      "On a 500 the app shows the normal empty state — no error message or retry (same defect as RFT-TMO-002)",
+      "Error: API error gives the user no error message and no retry"
+    ],
+    "runAt": "2026-10-19T08:59:18.514Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-UX-004": {
+    "status": "PASS",
+    "measured": "empty state shown",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Shows an empty-state message on an empty queue"
+    ],
+    "runAt": "2026-10-19T08:59:18.514Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-UX-011": {
+    "status": "PASS",
+    "measured": "0 unnamed icon button(s)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "All icon-only buttons are labeled"
+    ],
+    "runAt": "2026-10-19T08:59:18.514Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

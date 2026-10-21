@@ -1,0 +1,418 @@
+{
+  "DOC-SEC-001": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-SEC-001": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "4/6 checks passed",
+      "superadmin session cannot open /admin/profile: Error: Route guard let this session in: still on /admin/profile/ rendering module content (no login/denied screen)",
+      "pharmacy session cannot open /admin/profile: Error: Route guard let this session in: still on /admin/profile/ rendering module content (no login/denied screen)"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-SEC-001": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "1/6 checks passed",
+      "superadmin session cannot open /reception/profile: Error: Route guard let this session in: still on /reception/profile/ rendering module content (no login/denied screen)",
+      "admin session cannot open /reception/profile: Error: Route guard let this session in: still on /reception/profile/ rendering module content (no login/denied screen)",
+      "doctor session cannot open /reception/profile: Error: Route guard let this session in: still on /reception/profile/ rendering module content (no login/denied screen)",
+      "diagnostic session cannot open /reception/profile: Error: Route guard let this session in: still on /reception/profile/ rendering module content (no login/denied screen)",
+      "pharmacy session cannot open /reception/profile: Error: Route guard let this session in: still on /reception/profile/ rendering module content (no login/denied screen)"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-SEC-001": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "1/6 checks passed",
+      "admin session cannot open /superadmin/profile: Error: Route guard let this session in: still on /superadmin/profile/ rendering module content (no login/denied screen)",
+      "reception session cannot open /superadmin/profile: Error: Route guard let this session in: still on /superadmin/profile/ rendering module content (no login/denied screen)",
+      "doctor session cannot open /superadmin/profile: Error: Route guard let this session in: still on /superadmin/profile/ rendering module content (no login/denied screen)",
+      "diagnostic session cannot open /superadmin/profile: Error: Route guard let this session in: still on /superadmin/profile/ rendering module content (no login/denied screen)",
+      "pharmacy session cannot open /superadmin/profile: Error: Route guard let this session in: still on /superadmin/profile/ rendering module content (no login/denied screen)"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-SEC-001": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "1/6 checks passed",
+      "superadmin session cannot open /diagnostic: Error: Route guard let this session in: still on /diagnostic/ rendering module content (no login/denied screen)",
+      "admin session cannot open /diagnostic: Error: Route guard let this session in: still on /diagnostic/ rendering module content (no login/denied screen)",
+      "reception session cannot open /diagnostic: Error: Route guard let this session in: still on /diagnostic/ rendering module content (no login/denied screen)",
+      "doctor session cannot open /diagnostic: Error: Route guard let this session in: still on /diagnostic/ rendering module content (no login/denied screen)",
+      "pharmacy session cannot open /diagnostic: Error: Route guard let this session in: still on /diagnostic/ rendering module content (no login/denied screen)"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-SEC-001": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "6/6 checks passed"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-002": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "0/5 checks passed",
+      "superadmin session cannot open /doctor/profile: Error: Route guard let this session in: still on /doctor/profile/ rendering module content (no login/denied screen)",
+      "admin session cannot open /doctor/profile: Error: Route guard let this session in: still on /doctor/profile/ rendering module content (no login/denied screen)",
+      "reception session cannot open /doctor/profile: Error: Route guard let this session in: still on /doctor/profile/ rendering module content (no login/denied screen)",
+      "diagnostic session cannot open /doctor/profile: Error: Route guard let this session in: still on /doctor/profile/ rendering module content (no login/denied screen)",
+      "pharmacy session cannot open /doctor/profile: Error: Route guard let this session in: still on /doctor/profile/ rendering module content (no login/denied screen)"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-050": {
+    "status": "FAIL",
+    "measured": "missing",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Error: Content-Security-Policy: missing"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-052": {
+    "status": "FAIL",
+    "measured": "missing",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Error: Strict-Transport-Security: missing"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-051": {
+    "status": "FAIL",
+    "measured": "missing",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Error: X-Frame-Options / frame-ancestors: missing"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-053": {
+    "status": "FAIL",
+    "measured": "missing",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Error: X-Content-Type-Options: nosniff: missing"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-054": {
+    "status": "FAIL",
+    "measured": "referrer-policy=∅; permissions-policy=∅",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Error: Referrer-Policy + Permissions-Policy: referrer-policy=∅; permissions-policy=∅"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-012": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "valid refresh issued a new token: true; invalid refresh → 401"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-010": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Post-logout URL: /login",
+      "All auth keys cleared"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-014": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Landed on /login"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-022": {
+    "status": "PASS",
+    "measured": "2 assets scanned",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "No private-key/cloud-secret/password/JWT literals found"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-021": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "No Razorpay public key literal found",
+      "No payment *_secret found"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-020": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "crypto-js ships in the client bundle; its key (VITE_SECRET_KEY) is embedded and readable by anyone",
+      "A client-embedded key protects nothing from the client; confirm it is NOT reused as a server-side secret (main-repo review)."
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-055": {
+    "status": "FAIL",
+    "measured": "missing",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "No CSP <meta> in index.html and no CSP header (GEN-SEC-050) → app has no CSP at all",
+      "Error: no CSP meta fallback in index.html"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-060": {
+    "status": "PASS",
+    "measured": "46 requests",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "All requests used https/wss"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-062": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "No phone/mobile in query strings"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-063": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "0 cookies for origin",
+      "No auth cookies (token lives in sessionStorage; requests use Authorization: Bearer)"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-061": {
+    "status": "FAIL",
+    "measured": "16 console lines",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "error: WebSocket connection to 'wss://98jahxhmj5.ap-south-1.awsapprunner.com/socket.io/?token=<jwt>&EIO=4&transport=webs",
+      "warning: WebSocket connection to 'wss://98jahxhmj5.ap-south-1.awsapprunner.com/socket.io/?token=<jwt>&EIO=4&transport=we",
+      "Error: token/PII in console"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-SEC-003": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "12 admin API responses checked; all scoped to IN3610001058",
+      "Tampered /HPR/verify/banner?hospitalId=IN3610001068 → 403"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-041": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "injected <img> elements: 0",
+      "onerror executed: false"
+    ],
+    "runAt": "2026-10-19T06:12:15.160Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-SEC-030": {
+    "status": "FAIL",
+    "measured": "pdfjs-dist@3.11.174",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "npm audit: high",
+      "PDF.js vulnerable to arbitrary JavaScript execution upon opening a malicious PDF (high)"
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  },
+  "GEN-SEC-031": {
+    "status": "FAIL",
+    "measured": "xlsx@0.18.5",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "npm audit: high",
+      "Prototype Pollution in sheetJS (high)",
+      "SheetJS Regular Expression Denial of Service (ReDoS) (high)"
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  },
+  "GEN-SEC-032": {
+    "status": "FAIL",
+    "measured": "axios@1.5.0",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "npm audit: high",
+      "Axios Cross-Site Request Forgery Vulnerability (moderate)",
+      "Server-Side Request Forgery in axios (high)"
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  },
+  "GEN-SEC-033": {
+    "status": "PASS",
+    "measured": "moment@2.30.1",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "npm audit: moderate",
+      "moment vulnerable to Path Traversal via crafted non-string locale name (moderate)"
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  },
+  "GEN-SEC-034": {
+    "status": "FAIL",
+    "measured": "51 high/critical",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "npm audit totals: {\"info\":0,\"low\":1,\"moderate\":15,\"high\":48,\"critical\":3,\"total\":67}",
+      "CI gate: fail on high+"
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  },
+  "GEN-SEC-040": {
+    "status": "PASS",
+    "measured": "0 occurrence(s)",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "No dangerouslySetInnerHTML in src/"
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  },
+  "GEN-SEC-013": {
+    "status": "PASS",
+    "measured": "sessionStorage",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign@27eb26c6]",
+      "Token stored in sessionStorage (14 VITE_SECRET_KEY references in src/), so it is readable by any script → XSS can exfiltrate it.",
+      "Risk documented. Mitigation (httpOnly cookie) is an architecture decision; a strong CSP (currently absent, GEN-SEC-050/055) lowers the XSS risk meanwhile."
+    ],
+    "runAt": "2026-10-19T06:15:43.543Z",
+    "env": "main-repo feature/feature-fixing-newdesign@27eb26c6"
+  }
+}

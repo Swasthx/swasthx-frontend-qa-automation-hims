@@ -1,0 +1,39 @@
+TC ID,Category,Component / Endpoint,Attack / Scenario,Tool,Expected Result,Severity
+AD-SEC-001,Access-Control,"/admin/* (RBACPermission, discount-tiers, policy, staffusers)",reception/doctor/pharmacy role opens admin URL directly,ZAP + manual,Redirected/blocked; API 403; no admin data rendered,Medium
+SA-SEC-001,Access-Control,"/superadmin/* (manageHospital, pricing, orders)",non-superadmin opens superadmin URL (no RequireAuth wrapper here),ZAP + manual,Redirected/blocked; API 403,Medium
+DOC-SEC-001,Access-Control,/doctor/consult/:patientId,unauthenticated deep-link (no token),manual + React Router,"Redirect to /login, nothing renders",High
+RCP-SEC-001,Access-Control,/reception/*,other-role token hits reception routes,manual,Redirect/block,High
+DIAG-SEC-001,Access-Control,/diagnostic/*,cross-role access,manual,Redirect/block,Critical
+PH-SEC-001,Access-Control,/pharmacy/* (RequireAuthPharmacy),cross-role / no token,manual,Guard blocks (verify fix held),High
+GEN-SEC-002,Access-Control,All role routers using <Routes element={guard}>,Confirm guard actually mounts on nested routes,manual code + runtime,Guard executes on every nested route,Critical
+AD-SEC-003,Access-Control (IDOR),"/admin/diagnostics/:id, /admin/doctorsetup/:doctorId",swap id to another tenant's resource,Burp / ZAP,"API 403/404, no cross-tenant data",High
+AD-SEC-004,Access-Control (UI),AdminSidebar links gated by lowercase permission,user without permission navigates by URL (link hidden),manual,Blocked even when link hidden,High
+GEN-SEC-010,Auth/Session,sessionStorage token/refreshToken/role,Logout clears all auth keys,DevTools / manual,storage emptied on logout,Critical
+GEN-SEC-011,Auth/Session,useIdleTimeout,Idle expiry clears token + redirects,manual,session invalidated after idle,High
+GEN-SEC-012,Auth/Session,axios refresh flow,Expired token → refresh; bad refresh → force logout,Burp / manual,"no loop, logout on 401",High
+GEN-SEC-013,Auth/Session,token in sessionStorage (XSS-readable),Assess XSS→token theft; consider httpOnly cookie,review,risk documented/mitigated,High
+GEN-SEC-014,Auth/Session,Browser back after logout,navigate back to protected page post-logout,manual,"no cached PHI, re-auth required",High
+GEN-SEC-020,Secrets,VITE_SECRET_KEY (sharedFunction.js) + crypto-js,inspect built bundle for the secret,grep dist / source-map-explorer,no real server secret in client,High
+GEN-SEC-021,Secrets,VITE_RAZORPAY_KEY (paymentAPI.js),"confirm only Razorpay key_id (public), not key_secret",grep / manual,no key_secret shipped,High
+GEN-SEC-022,Secrets,all import.meta.env / .env,no tokens/passwords/private keys in any VITE_* var,grep + snyk code,clean,High
+GEN-SEC-030,Dependency/SCA,pdfjs-dist 3.11.174 (@react-pdf-viewer),CVE-2024-4367 arbitrary JS via crafted PDF,npm audit / snyk + open malicious PDF,upgrade pdfjs ≥4.2 or isEvalSupported:false; no JS exec,High
+GEN-SEC-031,Dependency/SCA,xlsx 0.18.5 (SheetJS),prototype pollution / ReDoS (CVE-2023-30533),npm audit / snyk,patched/mitigated version,High
+GEN-SEC-032,Dependency/SCA,axios 1.5.0,CVEs fixed in later 1.x (SSRF / cred leak),npm audit / snyk,upgrade axios,High
+GEN-SEC-033,Dependency/SCA,moment 2.x,ReDoS / deprecated,npm audit / snyk,migrate to dayjs,High
+GEN-SEC-034,Dependency/SCA,whole dependency tree,CI gate: 0 high/critical,npm audit --audit-level=high / snyk test,pipeline fails on high+,High
+GEN-SEC-040,XSS,app-wide render,keep dangerouslySetInnerHTML at 0,ESLint react/no-danger + grep,0 occurrences,High
+GEN-SEC-041,XSS,react-highlight-words (search),inject <img onerror>/<script> as search term,manual,"rendered escaped, no exec",High
+GEN-SEC-042,XSS,react-helmet (DynamicDoctorProfileLanding),malicious doctor name/meta into <head>,manual,"escaped, no exec",High
+GEN-SEC-043,XSS (upload),CustomImageUpload / SingleVideoUpload,upload SVG w/ embedded script or spoofed MIME,manual / ZAP,"type+size validated, SVG blocked/sanitized",High
+GEN-SEC-044,Stored XSS,profile/notes/ticket fields,"inject payload, persist, reload & view",manual,escaped on render,High
+GEN-SEC-050,Headers/CSP,HTTP response headers (hosting),Content-Security-Policy present & restrictive,securityheaders.com / ZAP / curl -I,"CSP blocks inline/eval, whitelists origins",High
+GEN-SEC-051,Headers,X-Frame-Options / frame-ancestors,iframe the app (clickjacking),manual iframe / ZAP,framing denied,High
+GEN-SEC-052,Headers,Strict-Transport-Security (HSTS),check HTTPS enforcement header,curl -I / securityheaders,"HSTS set, long max-age",High
+GEN-SEC-053,Headers,X-Content-Type-Options,check nosniff present,curl -I,nosniff set,High
+GEN-SEC-054,Headers,Referrer-Policy / Permissions-Policy,check present & strict,securityheaders.com,"strict-origin-when-cross-origin, minimal perms",High
+GEN-SEC-055,CSP (fallback),index.html <meta http-equiv>,meta CSP if server headers not possible,manual,present as fallback,High
+GEN-SEC-060,Transport,"API + socket (VITE_BASE_URL, websocket)","ensure HTTPS/WSS only, no mixed content",DevTools / ZAP,no http:// or ws:// calls,High
+GEN-SEC-061,PII/Logging,"console logs (socket warn, errors)",no token/PHI/PII in console or network in prod build,prod build + manual,nothing sensitive logged,High
+GEN-SEC-062,Data exposure,"query params (phone, ids)",PHI/PII not leaked in URL/referrer,manual,"ids only, no PII in URL",High
+GEN-SEC-063,CSRF,state-changing POSTs,"confirm bearer-header auth, not cookie",Burp / review,no cookie-based auth → CSRF low,High
+GEN-SEC-064,Bot/Abuse,Login (VITE_RECAPTURE_SITE_KEY),reCAPTCHA + OTP enforced server-side,manual / Burp,brute-force/bot mitigated,High
