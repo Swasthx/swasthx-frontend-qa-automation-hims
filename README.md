@@ -171,6 +171,22 @@ component TCs render React with antd/redux/mobx providers, so they need Vitest +
 Library set up **inside the product repo** (that's where they belong) — marked "Main repo" in
 `componentUnitResult.md`. Ask and I'll scaffold that in `Swasthx_HIP_Frontend`.
 
+## Reports: browser dashboard + summary
+
+- **`Test-result/index.html`** — a single self-contained page (inline CSS/JS, no server, no network)
+  that renders every category's results with KPIs, a status filter, search, and the run command per
+  category. **Open it directly in a browser**, or deploy the `Test-result/` folder as static files
+  (GitHub Pages, S3, Netlify, `npx serve Test-result`) and it's viewable at the deployed URL.
+  Rebuild after a run with `npm run report:html`.
+- **`FullTestResultSummary.md`** — the same tallies + per-category run commands as Markdown (`npm run dashboard`).
+- **`Test-result/<category>Result.md`** — per-category detail, every TC traceable.
+
+```bash
+npm run report:html   # regenerate the HTML dashboard from recorded data
+npm run dashboard     # regenerate the Markdown summary
+npm run results       # regenerate all per-category .md sheets
+```
+
 ## Test plans and result sheets
 
 ```

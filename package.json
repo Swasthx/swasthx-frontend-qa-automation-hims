@@ -27,6 +27,7 @@
     "test:wv": "playwright test tests/web-vitals --project=chromium --workers=1",
     "results": "node scripts/build-results.js",
     "dashboard": "node scripts/dashboard.js",
+    "report:html": "node scripts/html-report.js",
     "sec:mainrepo": "node scripts/main-repo-security.js",
     "test:bundle": "node scripts/bundle-size.js",
     "test:unit": "node --test unit/*.test.mjs",
