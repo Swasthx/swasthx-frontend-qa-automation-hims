@@ -176,6 +176,13 @@ document.getElementById('legend').innerHTML = 'Pass / Fail / Error are executed 
 </body>
 </html>`;
 
-fs.mkdirSync('Test-result', { recursive: true });
-fs.writeFileSync(path.join('Test-result', 'index.html'), html);
-console.log(`Test-result/index.html written — ${total} TCs, ${totals.PASS} pass / ${totals.FAIL} fail. Open it in a browser or deploy the Test-result/ folder.`);
+// Write the report to both Test-result/ (local viewing + zip) and docs/ (served by GitHub Pages
+// when Pages is set to "Deploy from a branch → main → /docs"). The report is self-contained,
+// so a single index.html is all Pages needs; .nojekyll stops Pages' Jekyll from touching it.
+for (const dir of ['Test-result', 'docs']) {
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), html);
+}
+fs.writeFileSync(path.join('docs', '.nojekyll'), '');
+console.log(`Report written to Test-result/index.html and docs/index.html — ${total} TCs, ${totals.PASS} pass / ${totals.FAIL} fail.`);
+console.log('GitHub Pages (main /docs) will serve docs/index.html at the site root.');
