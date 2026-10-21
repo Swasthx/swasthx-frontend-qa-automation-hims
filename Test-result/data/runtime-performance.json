@@ -1,0 +1,210 @@
+{
+  "PH-RUN-002": {
+    "status": "PASS",
+    "measured": "144ms",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "type in patient search; target ≤200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-RUN-002": {
+    "status": "PASS",
+    "measured": "120ms",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "click a queue tab; target ≤200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-RUN-003": {
+    "status": "PASS",
+    "measured": "112ms",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "type in patient search; target ≤200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-RUN-002": {
+    "status": "PASS",
+    "measured": "24ms",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "apply/reset audit filter; target ≤200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-RUN-006": {
+    "status": "PASS",
+    "measured": "16ms",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "refresh analytics (date range); target ≤200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-RUN-004": {
+    "status": "PASS",
+    "measured": "128ms",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "type in queue search; target ≤200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-RUN-004": {
+    "status": "NOT RUN",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Interaction target for \"filter medicines\" not found on /superadmin/medicine (selector/screen differs or no data): locator.click: Timeout 15000ms exceeded.",
+      "interaction element not found"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-RUN-003": {
+    "status": "NOT RUN",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Interaction target for \"type in patient search\" not found on /superadmin/managepaitent (selector/screen differs or no data): locator.click: Timeout 15000ms exceeded.",
+      "interaction element not found"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-RUN-004": {
+    "status": "PASS",
+    "measured": "heap 20.8→20.8 MB (+0.2%)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "DOM nodes 239→239 (Δ0); target ±5%, ceiling 40%"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-RUN-004": {
+    "status": "PASS",
+    "measured": "heap 101.1→20.5 MB (-79.7%)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "DOM nodes 5704→240 (Δ-5464); target ±5%, ceiling 40%"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-RUN-001": {
+    "status": "PASS",
+    "measured": "heap 20.8→23.3 MB (+12.1%), nodes Δ129",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Target: nodes released after close"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-RUN-002": {
+    "status": "PASS",
+    "measured": "TBT 0ms over 4 navigations",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "0 long tasks, longest 0ms; target TBT <200ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-RUN-002": {
+    "status": "PASS",
+    "measured": "0 long tasks (longest 0ms, ~12 rows)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Total blocking 0ms; target 0 tasks >50ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-RUN-001": {
+    "status": "PASS",
+    "measured": "0 long tasks (longest 0ms, ~2 rows)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Total blocking 0ms; target 0 tasks >50ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-RUN-002": {
+    "status": "PASS",
+    "measured": "0 long tasks (longest 0ms, ~6 rows)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Total blocking 0ms; target 0 tasks >50ms"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-RUN-005": {
+    "status": "PASS",
+    "measured": "61 fps (~3 rows/cards)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Target ≥55 fps"
+    ],
+    "runAt": "2026-10-19T08:05:24.556Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

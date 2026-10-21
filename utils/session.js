@@ -3,8 +3,8 @@ import path from 'node:path';
 
 export const AUTH_DIR = path.resolve('.auth');
 
-// sessionStorage keys the app reads its auth from.
-export const SESSION_KEYS = ['token', 'refreshToken', 'role', 'permissions', 'impersonatedBy'];
+// sessionStorage keys the login screen writes (lastLogin feeds the "Last login" header label).
+export const SESSION_KEYS = ['token', 'refreshToken', 'role', 'permissions', 'impersonatedBy', 'lastLogin'];
 
 const bundlePath = (role) => path.join(AUTH_DIR, `${role}.json`);
 
@@ -31,11 +31,41 @@ export function jwtExpiry(token) {
   }
 }
 
-// Opaque tokens (no exp) are trusted for 1h after capture.
+// Opaque tokens (no exp) are trusted for 1h after capture. Access tokens here live 15 min,
+// so global-setup reuses a cached token only if it has >10 min left; tests then keep it
+// alive with refreshLogin() (see fixtures/auth.fixture.js).
 export function isBundleFresh(bundle, minRemainingMs = 10 * 60 * 1000) {
   if (!bundle?.session?.token) return false;
   const exp = bundle.expiresAt ?? (bundle.capturedAt ? bundle.capturedAt + 60 * 60 * 1000 : 0);
   return exp - Date.now() > minRemainingMs;
+}
+
+/**
+ * Cross-process mutex (Playwright workers are separate processes) via an exclusive
+ * lock file. Stale locks from a crashed worker are broken after `staleMs`.
+ */
+export async function withRoleLock(role, fn, { staleMs = 90_000 } = {}) {
+  fs.mkdirSync(AUTH_DIR, { recursive: true });
+  const lock = path.join(AUTH_DIR, `${role}.lock`);
+  for (;;) {
+    try {
+      fs.closeSync(fs.openSync(lock, 'wx'));
+      break;
+    } catch (err) {
+      if (err.code !== 'EEXIST') throw err;
+      try {
+        if (Date.now() - fs.statSync(lock).mtimeMs > staleMs) fs.rmSync(lock, { force: true });
+      } catch {
+        // lock vanished between checks, so just retry
+      }
+      await new Promise((r) => setTimeout(r, 200));
+    }
+  }
+  try {
+    return await fn();
+  } finally {
+    fs.rmSync(lock, { force: true });
+  }
 }
 
 /**

@@ -17,7 +17,8 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 2 : undefined,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  // sheet-reporter writes Test-result/<category>Result.md for every TC ID found in Test-case-csv.
+  reporter: [['list'], ['html', { open: 'never' }], ['./reporters/sheet-reporter.js']],
 
   use: {
     baseURL: process.env.BASE_URL,

@@ -1,0 +1,56 @@
+TC ID,Module,Route / URL,Metric,Measurement,Device · Network,Percentile,Target (Good),Tool
+PH-WV-001,Pharmacy,/pharmacy,LCP,Lab,Mobile · Fast 3G,p75,≤ 2.5s,Lighthouse CI
+SA-WV-001,SuperAdmin,/superadmin,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+SA-WV-002,SuperAdmin,/superadmin,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+SA-WV-003,SuperAdmin,/superadmin,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+SA-WV-004,SuperAdmin,/superadmin,FCP,Lab,Desktop · Cable,p75,≤ 1.8s,Lighthouse CI
+SA-WV-005,SuperAdmin,/superadmin,TTFB,Lab,Desktop · Cable,p75,≤ 800ms,Lighthouse CI
+SA-WV-006,SuperAdmin,/superadmin/hospital-analytics,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+SA-WV-007,SuperAdmin,/superadmin/hospital-analytics,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+SA-WV-008,SuperAdmin,/superadmin/hospital-analytics,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+SA-WV-009,SuperAdmin,/superadmin/orders,LCP,Lab,Mobile · Fast 3G,p75,≤ 2.5s,Lighthouse CI
+SA-WV-010,SuperAdmin,/superadmin/managepaitent,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+AD-WV-001,Admin,/admin,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+AD-WV-002,Admin,/admin,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+AD-WV-003,Admin,/admin,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+AD-WV-004,Admin,/admin/operationsdashboard,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+AD-WV-005,Admin,/admin/operationsdashboard,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+AD-WV-006,Admin,/admin/Analytics,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+AD-WV-007,Admin,/admin/auditlog,LCP,Lab,Mobile · Fast 3G,p75,≤ 2.5s,Lighthouse CI
+AD-WV-008,Admin,/admin/auditlog,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+AD-WV-009,Admin,/admin/financialdashboard,FCP,Lab,Desktop · Cable,p75,≤ 1.8s,Lighthouse CI
+AD-WV-010,Admin,/admin/RBACPermission,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+RCP-WV-001,Reception,/reception,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+RCP-WV-002,Reception,/reception,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+RCP-WV-003,Reception,/reception,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+RCP-WV-004,Reception,/reception/queue,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+RCP-WV-005,Reception,/reception/queue,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+RCP-WV-006,Reception,/reception/queue,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+RCP-WV-007,Reception,/reception/patient,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+DOC-WV-001,Doctor,/doctor,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+DOC-WV-002,Doctor,/doctor,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+DOC-WV-003,Doctor,/doctor,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+DOC-WV-004,Doctor,/doctor/dashboard,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+DOC-WV-005,Doctor,/doctor/dashboard,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+DOC-WV-006,Doctor,/doctor/consult/:patientId,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+DOC-WV-007,Doctor,/doctor/consult/:patientId,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+DOC-WV-008,Doctor,/doctor/calendar,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+DOC-WV-009,Doctor,/doctor/queue,LCP,Lab,Mobile · Fast 3G,p75,≤ 2.5s,Lighthouse CI
+DIAG-WV-001,Diagnostic,/diagnostic,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+DIAG-WV-002,Diagnostic,/diagnostic,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+DIAG-WV-003,Diagnostic,/diagnostic,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+DIAG-WV-004,Diagnostic,/diagnostic/queue,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+DIAG-WV-005,Diagnostic,/diagnostic/queue,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+DIAG-WV-006,Diagnostic,/diagnostic/operator/queue,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+DIAG-WV-007,Diagnostic,/diagnostic/availability,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+PH-WV-002,Pharmacy,/pharmacy,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+PH-WV-003,Pharmacy,/pharmacy,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+PH-WV-004,Pharmacy,/pharmacy,FCP,Lab,Desktop · Cable,p75,≤ 1.8s,Lighthouse CI
+PH-WV-005,Pharmacy,/pharmacy,TTFB,Lab,Desktop · Cable,p75,≤ 800ms,Lighthouse CI
+PH-WV-006,Pharmacy,/pharmacy/queue,LCP,Lab,Desktop · Cable,p75,≤ 2.5s,Lighthouse CI
+PH-WV-007,Pharmacy,/pharmacy/queue,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+PH-WV-008,Pharmacy,/pharmacy/patient,INP,Lab,Desktop · Cable,p75,≤ 200ms,Lighthouse CI
+PH-WV-009,Pharmacy,/pharmacy/payment,CLS,Lab,Desktop · Cable,p75,≤ 0.1,Lighthouse CI
+PH-WV-010,Pharmacy,/pharmacy,LCP,Field-RUM,Mobile · real users,p75,≤ 2.5s,web-vitals + RUM
+DOC-WV-010,Doctor,/doctor/dashboard,INP,Field-RUM,Desktop · real users,p75,≤ 200ms,web-vitals + RUM
+AD-WV-011,Admin,/admin/operationsdashboard,CLS,Field-RUM,Desktop · real users,p75,≤ 0.1,web-vitals + RUM

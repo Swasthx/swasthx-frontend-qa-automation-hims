@@ -1,0 +1,11 @@
+{
+  "PH-CMP-001": {
+    "status": "PASS",
+    "measured": "6/6 assertions",
+    "notes": [
+      "[main-repo feature/feature-fixing-newdesign] Unit-tested the real orderStage.js (pure module) with node --test: deriveStage status→stage incl. unknown→safe default, isPaid, STAGE_META completeness, inbox/fulfilment partition"
+    ],
+    "runAt": "2026-10-19T09:15:04.299Z",
+    "env": "main-repo unit (node --test)"
+  }
+}

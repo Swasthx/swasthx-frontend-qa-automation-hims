@@ -1,0 +1,438 @@
+{
+  "GEN-A11Y-002": {
+    "status": "PASS",
+    "measured": "lang=en",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-004": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "main=1, nav=1, banner=0, skipLink=false",
+      "Error: no skip-to-content link"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-008": {
+    "status": "PASS",
+    "measured": "0px horizontal overflow at 320px",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-003": {
+    "status": "FAIL",
+    "measured": "1/6 unique",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "/superadmin/profile: \"Swasthx\"",
+      "/admin/profile: \"Swasthx\"",
+      "/reception/queue: \"Swasthx\"",
+      "/doctor/profile: \"Swasthx\"",
+      "/diagnostic/queue: \"Swasthx\"",
+      "/pharmacy/queue: \"Swasthx\"",
+      "Error: titles are not unique across routes: Swasthx | Swasthx | Swasthx | Swasthx | Swasthx | Swasthx"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-001": {
+    "status": "FAIL",
+    "measured": "7 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "/superadmin/profile: color-contrast",
+      "/admin/profile: color-contrast",
+      "/reception/queue: color-contrast, label",
+      "/doctor/profile: color-contrast",
+      "/diagnostic/queue: color-contrast",
+      "/pharmacy/queue: color-contrast",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (5 node(s)) e.g. .pt-1 — https://dequeuniversity.com/rules/axe/4.13/color-contrast?appli"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-006": {
+    "status": "FAIL",
+    "measured": "49 low-contrast node(s)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "/superadmin/profile: 5 node(s)",
+      "/admin/profile: 5 node(s)",
+      "/reception/queue: 8 node(s)",
+      "/doctor/profile: 13 node(s)",
+      "/diagnostic/queue: 9 node(s)",
+      "/pharmacy/queue: 9 node(s)",
+      "Error: color-contrast violations on: /superadmin/profile, /admin/profile, /reception/queue, /doctor/profile, /diagnostic/queue, /pharmacy/queue"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-010": {
+    "status": "PASS",
+    "measured": "0 name issue(s)",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "All controls have accessible names"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AUTH-A11Y-001": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "mobile input has accessible name: false",
+      "label",
+      "Error: mobile-number input has no accessible name"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-A11Y-001": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (7)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (7 node(s)) e.g. .pt-1 — https://dequeuniversity.com/rules/axe/4.13/color-contrast?appli"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-A11Y-002": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (41)",
+      "select-name (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (41 node(s)) e.g. .pt-1 — https://dequeuniversity.com/rules/axe/4.13/color-contrast?appl"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-A11Y-003": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "button-name (2)",
+      "color-contrast (10)",
+      "Error: [critical] button-name: Buttons must have discernible text (2 node(s)) e.g. tr[data-row-key=\"1\"] > td:nth-child(9) > .ant-dropdown-trigger.hover\\:bg-gray-100.h-8 — https://d"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-A11Y-001": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (18)",
+      "select-name (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (18 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .min-w-0.gap-3.flex > .truncate — https://dequeuniv"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-A11Y-002": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (18)",
+      "select-name (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (18 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .min-w-0.gap-3.flex > .truncate — https://dequeuniv"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-A11Y-003": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (1 node(s)) e.g. .text-\\[12px\\] — https://dequeuniversity.com/rules/axe/4.13/color-contr"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-A11Y-004": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "button-name (15)",
+      "color-contrast (6)",
+      "Error: [critical] button-name: Buttons must have discernible text (15 node(s)) e.g. .rounded-2xl.border-slate-200.border:nth-child(1) > .divide-y.divide-slate-100 > .gap-4.p-4.just"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-A11Y-005": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (9)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (9 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .min-w-0.gap-3.items-center > .truncate — https://de"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-A11Y-001": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (8)",
+      "label (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (8 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4."
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-A11Y-002": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (8)",
+      "label (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (8 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4."
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-A11Y-003": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (32)",
+      "label (2)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (32 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-A11Y-001": {
+    "status": "NOT RUN",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Seed missing: set DOC_CONSULT_PATIENT_ID in .env to scan /doctor/consult/:patientId",
+      "Seed missing: DOC_CONSULT_PATIENT_ID"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-A11Y-002": {
+    "status": "NOT RUN",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Seed missing: set DOC_CONSULT_PATIENT_ID in .env to scan /doctor/consult/:patientId",
+      "Seed missing: DOC_CONSULT_PATIENT_ID"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-A11Y-003": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (18)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (18 node(s)) e.g. .block.text-\\[12px\\].text-gray-400 — https://dequeuniversity.com/rules"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-A11Y-004": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (6)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (6 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4."
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-A11Y-001": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (2)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (2 node(s)) e.g. .text-\\[12px\\] — https://dequeuniversity.com/rules/axe/4.13/color-contr"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-A11Y-002": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (13)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (13 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-A11Y-003": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (1)",
+      "label (2)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (1 node(s)) e.g. .text-\\[12px\\] — https://dequeuniversity.com/rules/axe/4.13/color-contr"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-A11Y-001": {
+    "status": "FAIL",
+    "measured": "1 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (9)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (9 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4."
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-A11Y-003": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "button-name (1)",
+      "color-contrast (5)",
+      "Error: [critical] button-name: Buttons must have discernible text (1 node(s)) e.g. .top-\\[18px\\] — https://dequeuniversity.com/rules/axe/4.13/button-name?application=playwright"
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-A11Y-004": {
+    "status": "FAIL",
+    "measured": "2 serious/critical",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "color-contrast (9)",
+      "select-name (1)",
+      "Error: [serious] color-contrast: Elements must meet minimum color contrast ratio thresholds (9 node(s)) e.g. .bg-\\[\\#E8F6FE\\] > .truncate — https://dequeuniversity.com/rules/axe/4."
+    ],
+    "runAt": "2026-10-19T07:00:08.696Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-A11Y-011": {
+    "status": "FAIL",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "role=dialog, aria-modal=true, focusMovedInside=false, focusTrapped=false, dismissedBy=Close button (Esc did not work)",
+      "Error: focus was not moved into the modal"
+    ],
+    "runAt": "2026-10-19T07:12:16.550Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

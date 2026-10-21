@@ -1,0 +1,26 @@
+TC ID,Module,Build Artifact / Chunk,Check,Size Type,Budget,Baseline,Measured,Pass/Fail,Tool,Notes / Action
+BND-001,App-wide,entry index-[hash].js + initial vendor,Initial JS budget (first load),gzip,≤ 300 KB,—,—,Yes,rollup-plugin-visualizer,App shell only; lazy modules must be excluded
+BND-002,App-wide,index-[hash].css,Initial CSS budget,gzip,≤ 100 KB,—,—,Yes,source-map-explorer,antd + tailwind + slick + leaflet CSS
+BND-003,App-wide,total first-load transfer,Total initial transfer (cold /login),brotli,≤ 400 KB,—,—,Yes,Lighthouse / Network,Shell + login only
+BND-004,App-wide,build output,Regression gate vs last release,gzip,≤ +5% Δ,—,—,Yes,size-limit (CI),Fail PR if initial JS grows >5%
+BND-005,App-wide,build output,Compression served (gzip/brotli),brotli,on,—,—,Yes,Network headers,Verify Content-Encoding
+BND-010,SuperAdmin,superadmin route chunk,Code-split into own async chunk,gzip,≤ 200 KB,—,—,,rollup-plugin-visualizer,Static import in App.jsx — not split yet
+BND-011,Admin,admin route chunk,Code-split into own async chunk,gzip,≤ 250 KB,—,—,,rollup-plugin-visualizer,Largest module (many config pages); static now
+BND-012,Doctor,doctor route chunk,Code-split into own async chunk,gzip,≤ 200 KB,—,—,,rollup-plugin-visualizer,Static import now
+BND-013,Diagnostic,diagnostic route chunk,Code-split into own async chunk,gzip,≤ 150 KB,—,—,,rollup-plugin-visualizer,Static import now
+BND-014,Reception,reception route chunk,Code-split into own async chunk,gzip,≤ 120 KB,—,—,,rollup-plugin-visualizer,Static import now
+BND-015,Pharmacy,pharmacy route chunk,Code-split into own async chunk,gzip,≤ 150 KB,—,—,,rollup-plugin-visualizer,Static import now
+BND-020,App-wide,pdf vendor (@react-pdf/renderer + pdfjs-dist + jspdf + html2canvas),"Lazy-load, excluded from initial",gzip,not in initial; chunk ≤ 600 KB,—,—,,rollup-plugin-visualizer,Load only on Invoice/record view
+BND-021,App-wide,@react-pdf-viewer/* chunk,Lazy-load on viewer open,gzip,not in initial,—,—,,rollup-plugin-visualizer,PDF viewer screens only
+BND-022,App-wide,xlsx (SheetJS) chunk,Lazy-load on export action,gzip,not in initial; ≤ 300 KB,—,—,,rollup-plugin-visualizer,Dynamic import on Export click
+BND-023,App-wide,recharts chunk,Lazy-load on analytics/dashboard routes,gzip,not in initial; ≤ 150 KB,—,—,,rollup-plugin-visualizer,Analytics/operations dashboards only
+BND-024,App-wide,leaflet + react-leaflet chunk,Lazy-load on map screens,gzip,not in initial,—,—,,rollup-plugin-visualizer,Facility/map screens only
+BND-025,App-wide,video-react chunk,Lazy-load on video screens,gzip,not in initial,—,—,,rollup-plugin-visualizer,Only where player used
+BND-030,App-wide,moment + moment-timezone vs dayjs,No duplicate date lib,gzip,1 date lib,—,—,,rollup-plugin-visualizer / depcheck,Migrate moment→dayjs; drop moment (large)
+BND-031,App-wide,react-toastify + react-hot-toast + sweetalert,No duplicate toast/alert lib,gzip,1 toast lib,—,—,,rollup-plugin-visualizer,Consolidate (App uses react-hot-toast)
+BND-032,App-wide,html2canvas + html2canvas-pro,No duplicate canvas lib,gzip,1 only,—,—,,rollup-plugin-visualizer,Keep one
+BND-033,App-wide,lucide-react + react-icons,Single icon lib / tree-shaken,gzip,tree-shaken,—,—,,rollup-plugin-visualizer,Prefer one; import by subpath
+BND-034,App-wide,mobx + redux/@reduxjs/toolkit,Justify two state libs,gzip,justify,—,—,,rollup-plugin-visualizer,Both shipped today
+BND-040,App-wide,react-icons imports,Tree-shaking (no barrel import),gzip,only used icons,—,—,,source-map-explorer,Import from react-icons/<pack>
+BND-041,App-wide,antd,ESM tree-shaking; no global CSS import,gzip,tree-shaken,—,—,,rollup-plugin-visualizer,antd v5 ESM; avoid full reset import
+BND-042,App-wide,moment locales (if kept),Unused locales excluded,gzip,en only,—,—,,rollup-plugin-visualizer,Strip locale data

@@ -8,7 +8,8 @@ test.describe('App-wide — functional', () => {
   for (const key of ROLE_KEYS) {
     const role = getRole(key);
     test(`GEN-FUN-001 ${key} session lands on ${role.landing} without being sent to login`, {
-      annotation: { type: 'tc', description: 'GEN-FUN-001' },
+      // Also covers Business Logic GEN-BIZ-002 (role → correct module home).
+      annotation: [{ type: 'tc', description: 'GEN-FUN-001' }, { type: 'tc', description: 'GEN-BIZ-002' }],
     }, async ({ asRole }) => {
       const page = await asRole(key);
       await page.goto(role.landing);

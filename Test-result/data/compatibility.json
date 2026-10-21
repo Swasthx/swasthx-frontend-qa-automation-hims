@@ -1,0 +1,234 @@
+{
+  "CMPT-026": {
+    "status": "PASS",
+    "measured": "chromium: chromium: opened=yes, overlay=true, closed=false · webkit: webkit: opened=yes, overlay=true, closed=false · firefox: firefox: opened=yes, overlay=true, closed=false · edge: edge: opened=yes, overlay=true, closed=false",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-023": {
+    "status": "PASS",
+    "measured": "chromium: chromium: bell=1 · webkit: webkit: bell=1 · firefox: firefox: bell=1 · edge: edge: bell=1",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-017": {
+    "status": "PASS",
+    "measured": "chromium: chromium: 22 svg · webkit: webkit: 22 svg · firefox: firefox: 20 svg · edge: edge: 22 svg",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "SVG charts present"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-016": {
+    "status": "PASS",
+    "measured": "chromium: chromium: 0 bad dates · webkit: webkit: 0 bad dates · firefox: firefox: 0 bad dates · edge: edge: 0 bad dates",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "Dates render correctly"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-025": {
+    "status": "PASS",
+    "measured": "chromium: chromium: 0px overflow @390 · webkit: webkit: 0px overflow @390 · firefox: firefox: 0px overflow @390 · edge: edge: 0px overflow @390",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "Full responsive/tap-target audit is manual"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-002": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "chromium: overflowX=0px, no app errors",
+      "webkit: overflowX=0px, no app errors",
+      "firefox: overflowX=0px, no app errors",
+      "edge: overflowX=0px, no app errors"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-019": {
+    "status": "PASS",
+    "measured": "chromium: chromium: overflowX=0px · webkit: webkit: overflowX=0px · firefox: firefox: overflowX=0px · edge: edge: overflowX=0px",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "Page scrolls"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-003": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "chromium: overflowX=0px, no app errors",
+      "webkit: overflowX=0px, no app errors",
+      "firefox: overflowX=0px, no app errors",
+      "edge: overflowX=0px, no app errors"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-011": {
+    "status": "PASS",
+    "measured": "chromium: chromium: 3 socket.io reqs · webkit: webkit: 1 socket.io reqs · firefox: firefox: 3 socket.io reqs · edge: edge: 2 socket.io reqs",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "Socket handshake attempted",
+      ""
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-006": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "chromium: overflowX=0px, no app errors",
+      "webkit: overflowX=0px, no app errors",
+      "firefox: overflowX=0px, no app errors",
+      "edge: overflowX=0px, no app errors"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-004": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "chromium: overflowX=0px, no app errors",
+      "webkit: overflowX=0px, no app errors",
+      "firefox: overflowX=0px, no app errors",
+      "edge: overflowX=0px, no app errors"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-005": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "chromium: overflowX=0px, no app errors",
+      "webkit: overflowX=0px, no app errors",
+      "firefox: overflowX=0px, no app errors",
+      "edge: overflowX=0px, no app errors"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "CMPT-007": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium",
+      "webkit",
+      "firefox",
+      "edge"
+    ],
+    "notes": [
+      "4/4 checks passed across chromium, webkit, firefox, edge",
+      "chromium: overflowX=0px, no app errors",
+      "webkit: overflowX=0px, no app errors",
+      "firefox: overflowX=0px, no app errors",
+      "edge: overflowX=0px, no app errors"
+    ],
+    "runAt": "2026-10-19T08:26:01.581Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

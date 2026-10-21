@@ -1,0 +1,50 @@
+{
+  "AD-VIS-002": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Baselines: admin sidebar expanded + collapsed (main area masked)"
+    ],
+    "runAt": "2026-10-19T08:56:00.151Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-VIS-001": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Baseline: Create Order modal overlay"
+    ],
+    "runAt": "2026-10-19T08:56:00.151Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "GEN-VIS-002": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Baselines: pharmacy empty state + API-500 state"
+    ],
+    "runAt": "2026-10-19T08:56:00.151Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AUTH-VIS-001": {
+    "status": "PASS",
+    "reports": [],
+    "projects": [
+      "chromium"
+    ],
+    "notes": [
+      "Baselines: login desktop (1440) + mobile (390)"
+    ],
+    "runAt": "2026-10-19T08:56:00.151Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

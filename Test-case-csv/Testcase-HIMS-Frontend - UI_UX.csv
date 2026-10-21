@@ -1,0 +1,20 @@
+TC ID,Module,Screen / Flow,UX Criterion / Heuristic,Scenario / Steps,Expected (per design spec),Severity
+GEN-UX-001,App-wide,All async actions,Visibility of system status,Trigger a load/save,"Loading indicator <100ms, control disabled, result feedback shown",Medium
+GEN-UX-002,App-wide,Toasts (react-hot-toast),Feedback & error recovery,Fire success & error actions,Consistent toast; errors explain the next step (not codes),Low
+GEN-UX-003,App-wide,Destructive actions (delete/deactivate),Error prevention / user control,Click delete/deactivate,WarningModal confirm before action; cancel available,High
+GEN-UX-004,App-wide,Empty states (lists/tables),Recognition over recall,Open a list with no data,"Helpful empty state + CTA, never blank",Medium
+GEN-UX-005,App-wide,Error states,Help users recover,Force an API error,"Clear message + retry, no raw error dump",Medium
+GEN-UX-006,App-wide,Forms,Error prevention / identification,Submit invalid form,Inline errors near fields; entered data retained,
+GEN-UX-007,App-wide,Components vs Figma,Consistency & standards,Compare screens to design,"Matches design system (spacing, type, color, components)",Low
+GEN-UX-008,App-wide,Navigation / sidebar,Visibility / recognition,Navigate between modules,Active route highlighted; page title correct,High
+GEN-UX-009,App-wide,Responsive layout,Flexibility & efficiency,Resize to tablet/mobile,"Usable per design; no overflow, no clipping",
+GEN-UX-010,App-wide,Submit buttons,Error prevention,Double-click submit,Disabled while in-flight; no double action,
+GEN-UX-011,App-wide,Tooltips / icon labels (CustomToolTip),Help & documentation,Hover/focus icon actions,"Clear, accessible tooltip for icon-only actions",
+PH-UX-001,Pharmacy,Checkout flow,Match real world / feedback,Choose prepaid vs counter / homeTest,Options clear; blocked combos explained inline,
+PH-UX-002,Pharmacy,Cart price breakdown,Visibility of system status,View cart,"Subtotal/GST/total itemized, currency formatted",
+DOC-UX-001,Doctor,ConsultWorkspace,Efficiency of use,Write a prescription,"Efficient, keyboard-friendly, draft/unsaved cue",
+DOC-UX-002,Doctor,Schedule / calendar,Match real world,Book / view slots,Intuitive slot selection; time/timezone clear,
+RCP-UX-001,Reception,Queue,Visibility of status,Token lifecycle,"Clear token status + next-patient visibility, live updates",
+DIAG-UX-001,Diagnostic,Availability grid,Error prevention,Toggle slots,Clear selected/unavailable states; confirm bulk change,
+AD-UX-001,Admin,Config forms (policy/tax/token),Error prevention / help,Edit a config value,Guidance + validation + confirm on impactful change,
+SA-UX-001,SuperAdmin,Analytics dashboards,Aesthetic & minimalist,View metrics,"Readable charts, legends, date-range clarity, loading states",

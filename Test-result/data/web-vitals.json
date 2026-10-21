@@ -1,0 +1,784 @@
+{
+  "PH-WV-001": {
+    "status": "FAIL",
+    "measured": "68.75s",
+    "runs": [
+      "68.55s",
+      "68.69s",
+      "68.81s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-001": {
+    "status": "FAIL",
+    "measured": "19.65s",
+    "runs": [
+      "19.60s",
+      "19.66s",
+      "19.64s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-002": {
+    "status": "PASS",
+    "measured": "136ms",
+    "runs": [
+      "152ms",
+      "120ms",
+      "88ms"
+    ],
+    "notes": [
+      "Interaction: click \"Edit Profile\""
+    ],
+    "runAt": "2026-10-19T04:42:17.450Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-003": {
+    "status": "PASS",
+    "measured": "0.000",
+    "runs": [
+      "0.000",
+      "0.000",
+      "0.000"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-004": {
+    "status": "FAIL",
+    "measured": "19.37s",
+    "runs": [
+      "19.39s",
+      "19.35s",
+      "19.36s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-005": {
+    "status": "PASS",
+    "measured": "243ms",
+    "runs": [
+      "242ms",
+      "244ms",
+      "223ms"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-006": {
+    "status": "FAIL",
+    "measured": "19.59s",
+    "runs": [
+      "19.43s",
+      "19.41s",
+      "19.74s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-007": {
+    "status": "PASS",
+    "measured": "0.021",
+    "runs": [
+      "0.012",
+      "0.009",
+      "0.031"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-008": {
+    "status": "PASS",
+    "measured": "16ms",
+    "runs": [
+      "16ms",
+      "16ms",
+      "16ms"
+    ],
+    "notes": [
+      "Interaction: click tab \"Active…\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-009": {
+    "status": "FAIL",
+    "measured": "67.78s",
+    "runs": [
+      "67.33s",
+      "67.45s",
+      "68.11s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "SA-WV-010": {
+    "status": "PASS",
+    "measured": "80ms",
+    "runs": [
+      "32ms",
+      "128ms",
+      "24ms"
+    ],
+    "notes": [
+      "Interaction: click \"Add User\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-001": {
+    "status": "FAIL",
+    "measured": "20.10s",
+    "runs": [
+      "20.13s",
+      "19.98s",
+      "20.07s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-002": {
+    "status": "PASS",
+    "measured": "112ms",
+    "runs": [
+      "112ms",
+      "112ms",
+      "96ms"
+    ],
+    "notes": [
+      "Interaction: click \"Edit Profile\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-003": {
+    "status": "FAIL",
+    "measured": "0.132",
+    "runs": [
+      "0.127",
+      "0.127",
+      "0.138"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-004": {
+    "status": "FAIL",
+    "measured": "19.61s",
+    "runs": [
+      "19.54s",
+      "19.68s",
+      "19.52s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-005": {
+    "status": "PASS",
+    "measured": "0.014",
+    "runs": [
+      "0.014",
+      "0.014",
+      "0.013"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-006": {
+    "status": "PASS",
+    "measured": "72ms",
+    "runs": [
+      "16ms",
+      "128ms",
+      "16ms"
+    ],
+    "notes": [
+      "Interaction: click \"Refresh analytics\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-007": {
+    "status": "FAIL",
+    "measured": "68.06s",
+    "runs": [
+      "67.36s",
+      "68.25s",
+      "67.88s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-008": {
+    "status": "PASS",
+    "measured": "24ms",
+    "runs": [
+      "32ms",
+      "16ms",
+      "16ms"
+    ],
+    "notes": [
+      "Interaction: click \"Reset filters\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-009": {
+    "status": "FAIL",
+    "measured": "19.85s",
+    "runs": [
+      "19.61s",
+      "20.10s",
+      "19.59s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-010": {
+    "status": "PASS",
+    "measured": "0.000",
+    "runs": [
+      "0.000",
+      "0.000",
+      "0.000"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-001": {
+    "status": "FAIL",
+    "measured": "20.26s",
+    "runs": [
+      "20.28s",
+      "20.24s",
+      "20.25s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-002": {
+    "status": "PASS",
+    "measured": "24ms",
+    "runs": [
+      "24ms",
+      "24ms",
+      "24ms"
+    ],
+    "notes": [
+      "Interaction: click \"Edit Profile\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-003": {
+    "status": "PASS",
+    "measured": "0.000",
+    "runs": [
+      "0.000",
+      "0.000",
+      "0.000"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-004": {
+    "status": "FAIL",
+    "measured": "19.76s",
+    "runs": [
+      "19.80s",
+      "19.72s",
+      "19.66s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-005": {
+    "status": "PASS",
+    "measured": "20ms",
+    "runs": [
+      "16ms",
+      "24ms",
+      "16ms"
+    ],
+    "notes": [
+      "Interaction: click tab \"Follow…\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-006": {
+    "status": "PASS",
+    "measured": "0.002",
+    "runs": [
+      "0.002",
+      "0.002",
+      "0.002"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "RCP-WV-007": {
+    "status": "PASS",
+    "measured": "72ms",
+    "runs": [
+      "48ms",
+      "56ms",
+      "88ms"
+    ],
+    "notes": [
+      "Interaction: click tab \"Patient Appointments…\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-001": {
+    "status": "FAIL",
+    "measured": "19.79s",
+    "runs": [
+      "19.80s",
+      "19.68s",
+      "19.78s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-002": {
+    "status": "PASS",
+    "measured": "96ms",
+    "runs": [
+      "96ms",
+      "96ms",
+      "88ms"
+    ],
+    "notes": [
+      "Interaction: click \"Edit Profile\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-003": {
+    "status": "PASS",
+    "measured": "0.077",
+    "runs": [
+      "0.077",
+      "0.077",
+      "0.077"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-004": {
+    "status": "FAIL",
+    "measured": "19.54s",
+    "runs": [
+      "19.58s",
+      "19.49s",
+      "19.50s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-005": {
+    "status": "PASS",
+    "measured": "0.000",
+    "runs": [
+      "0.000",
+      "0.000",
+      "0.000"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-006": {
+    "status": "NOT RUN",
+    "runs": [],
+    "notes": [
+      "Seed missing: set DOC_CONSULT_PATIENT_ID in .env"
+    ],
+    "runAt": "2026-10-19T04:42:17.450Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-007": {
+    "status": "NOT RUN",
+    "runs": [],
+    "notes": [
+      "Seed missing: set DOC_CONSULT_PATIENT_ID in .env"
+    ],
+    "runAt": "2026-10-19T04:42:17.450Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-008": {
+    "status": "PASS",
+    "measured": "152ms",
+    "runs": [
+      "16ms",
+      "160ms",
+      "144ms"
+    ],
+    "notes": [
+      "Interaction: click \"Week\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-009": {
+    "status": "FAIL",
+    "measured": "68.24s",
+    "runs": [
+      "67.74s",
+      "68.44s",
+      "68.04s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-001": {
+    "status": "FAIL",
+    "measured": "20.45s",
+    "runs": [
+      "20.44s",
+      "20.46s",
+      "20.28s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-002": {
+    "status": "PASS",
+    "measured": "88ms",
+    "runs": [
+      "16ms",
+      "152ms",
+      "24ms"
+    ],
+    "notes": [
+      "Interaction: click \"Edit Profile\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-003": {
+    "status": "PASS",
+    "measured": "0.071",
+    "runs": [
+      "0.071",
+      "0.071",
+      "0.071"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-004": {
+    "status": "FAIL",
+    "measured": "20.54s",
+    "runs": [
+      "20.98s",
+      "20.09s",
+      "20.06s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-005": {
+    "status": "PASS",
+    "measured": "116ms",
+    "runs": [
+      "160ms",
+      "56ms",
+      "72ms"
+    ],
+    "notes": [
+      "Interaction: click tab \"Report Published…\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-006": {
+    "status": "FAIL",
+    "measured": "20.18s",
+    "runs": [
+      "19.96s",
+      "20.18s",
+      "20.18s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DIAG-WV-007": {
+    "status": "PASS",
+    "measured": "0.000",
+    "runs": [
+      "0.000",
+      "0.000",
+      "0.000"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-002": {
+    "status": "PASS",
+    "measured": "64ms",
+    "runs": [
+      "112ms",
+      "16ms",
+      "16ms"
+    ],
+    "notes": [
+      "Interaction: click \"Edit Profile\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-003": {
+    "status": "PASS",
+    "measured": "0.000",
+    "runs": [
+      "0.001",
+      "0.000",
+      "0.000"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-004": {
+    "status": "FAIL",
+    "measured": "27.49s",
+    "runs": [
+      "22.21s",
+      "19.43s",
+      "32.76s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-005": {
+    "status": "PASS",
+    "measured": "237ms",
+    "runs": [
+      "226ms",
+      "242ms",
+      "232ms"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-006": {
+    "status": "FAIL",
+    "measured": "21.65s",
+    "runs": [
+      "21.66s",
+      "21.55s",
+      "21.64s"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-007": {
+    "status": "PASS",
+    "measured": "56ms",
+    "runs": [
+      "24ms",
+      "64ms",
+      "48ms"
+    ],
+    "notes": [
+      "Interaction: click tab \"Order Delivered…\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-008": {
+    "status": "PASS",
+    "measured": "36ms",
+    "runs": [
+      "32ms",
+      "32ms",
+      "40ms"
+    ],
+    "notes": [
+      "Interaction: click tab \"My Patient…\""
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-009": {
+    "status": "PASS",
+    "measured": "0.001",
+    "runs": [
+      "0.001",
+      "0.001",
+      "0.001"
+    ],
+    "notes": [
+      "Engine: playwright",
+      "HTTP 301 → 404"
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "PH-WV-010": {
+    "status": "NOT RUN",
+    "measured": "—",
+    "runs": [],
+    "notes": [
+      "Requires main repo: field data needs the web-vitals library in the app plus a RUM collector and real traffic."
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "DOC-WV-010": {
+    "status": "NOT RUN",
+    "measured": "—",
+    "runs": [],
+    "notes": [
+      "Requires main repo: field data needs the web-vitals library in the app plus a RUM collector and real traffic."
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  },
+  "AD-WV-011": {
+    "status": "NOT RUN",
+    "measured": "—",
+    "runs": [],
+    "notes": [
+      "Requires main repo: field data needs the web-vitals library in the app plus a RUM collector and real traffic."
+    ],
+    "runAt": "2026-10-16T10:11:00.000Z",
+    "env": "https://qa-doctor.swasthx.com/"
+  }
+}

@@ -42,7 +42,7 @@ For a QA host with an unusual name, add it to `QA_ALLOWED_HOSTS`. There is no "f
 | Recovery (500/offline via interception) | `npm run test:recovery` |
 | Runtime (uncaught errors, 5xx) | `npm run test:runtime` |
 | Compatibility | `npm run test:compat` |
-| Web Vitals (Lighthouse, Chromium) | `npm run test:wv` |
+| Web Vitals (Chromium, serial) → `webvitalResult.md` | `npm run test:wv` |
 | Visual (Chromium) | `npm run test:visual` |
 | One TC | `npx playwright test -g "PH-FUN-001"` |
 | A category on one browser | `npm run test:security -- --project=firefox` |
@@ -127,10 +127,20 @@ Use DevTools → Network or `npm run codegen -- <role>` to confirm them. If the 
   **GEN-SEC-050** reports CSP / X-Frame-Options / HSTS (plus advisory nosniff and Referrer-Policy) as an
   attachment and annotations. Vite's dev server sends none of these, so it will fail locally.
   Run it against `vite preview` or QA, or set `SEC_HEADERS_ENFORCE=false` to report without failing.
-- **Web Vitals (PH-WV-001)** runs Lighthouse (mobile, simulated throttling) in a child Node process
-  (`scripts/lighthouse-run.js`; Lighthouse can't load inside the Playwright runner) on
-  Playwright's Chromium, with the same sessionStorage seeding. The HTML report is attached to the test.
-  Measure a **production build**: dev-server LCP is meaningless.
+- **Web Vitals (`*-WV-*`)** is data-driven from the planning sheet:
+  - `Test-case-csv/Testcase-HIMS-Frontend - Web Vitals.csv` is the sheet (one test per TC ID). Edit rows there.
+  - `test-data/web-vitals/interactions.js` holds the scripted interaction for each INP TC (non-mutating
+    only) and route params (`DOC_CONSULT_PATIENT_ID` for `/doctor/consult/:patientId`).
+  - `npm run test:wv` measures every Lab row `WV_RUNS` times (default 3, serially) and reports **p75** of
+    the runs into `Test-result/webvitalResult.md`. Raw Lighthouse output goes to `results/web-vitals/`.
+  - Engine `WV_ENGINE=playwright` (default): Playwright + web-vitals on a cold, DevTools-throttled load
+    (Mobile · Fast 3G = DevTools "Fast 3G" + 4× CPU on a Moto G4; Desktop · Cable = 28ms / 5 Mbps).
+    `WV_ENGINE=lighthouse` uses Lighthouse instead, but Lighthouse refuses pages served with a 4xx status,
+    and QA deep links currently answer `301 → 404` (SPA fallback), so it only works once hosting returns 200.
+  - Field-RUM rows are reported **NOT RUN – requires main repo** (web-vitals in the app + RUM collector).
+  - One TC: `npx playwright test tests/web-vitals --project=chromium --workers=1 -g "AD-WV-004 "`.
+    Quick pass: `WV_RUNS=1`.
+  - Measure a deployed **build** (QA), never the Vite dev server.
 - **Visual (PH-VIS-001)**: API responses are recorded to a HAR and replayed, so the test doesn't need
   to know the response shapes. `Date` is frozen, and animations and the caret are disabled.
   ```bash
@@ -146,10 +156,66 @@ Use DevTools → Network or `npm run codegen -- <role>` to confirm them. If the 
 
 ---
 
+## Component / unit tests (Step 10 — product repo)
+
+Unit tests run against the **product source**, not the black-box app. Pure modules can be tested
+with zero install and without mutating the product repo, via Node's built-in runner:
+
+```bash
+# MAIN_REPO defaults to ./Swasthx_HIP_Frontend (gitignored local checkout)
+npm run test:unit
+```
+
+`unit/orderStage.test.mjs` imports the real `orderStage.js` and covers PH-CMP-001. The other 11
+component TCs render React with antd/redux/mobx providers, so they need Vitest + React Testing
+Library set up **inside the product repo** (that's where they belong) — marked "Main repo" in
+`componentUnitResult.md`. Ask and I'll scaffold that in `Swasthx_HIP_Frontend`.
+
+## Reports: browser dashboard + summary
+
+- **`Test-result/index.html`** — a single self-contained page (inline CSS/JS, no server, no network)
+  that renders every category's results with KPIs, a status filter, search, and the run command per
+  category. **Open it directly in a browser**, or deploy the `Test-result/` folder as static files
+  (GitHub Pages, S3, Netlify, `npx serve Test-result`) and it's viewable at the deployed URL.
+  Rebuild after a run with `npm run report:html`.
+- **`FullTestResultSummary.md`** — the same tallies + per-category run commands as Markdown (`npm run dashboard`).
+- **`Test-result/<category>Result.md`** — per-category detail, every TC traceable.
+
+```bash
+npm run report:html   # regenerate the HTML dashboard from recorded data
+npm run dashboard     # regenerate the Markdown summary
+npm run results       # regenerate all per-category .md sheets
+```
+
+## Test plans and result sheets
+
+```
+Test-case-csv/                 the plan: one CSV per category (source of truth)
+  execution-plan.js            per TC: auto · auto+manual · auto+main · manual · main · needs-data
+  manual-results.csv           outcomes of manual TCs (TC ID, Status, Tester, Date, Evidence / Notes)
+Test-result/                   generated result sheets, one per category
+  webvitalResult.md, securityResult.md, accessibilityResult.md, …
+  data/<category>.json         merged automated results behind each sheet
+```
+
+- **Every** TC in a CSV appears in its sheet, automated or not. **Execution** says how it's run; **Status** is
+  `PASS · FAIL · ERROR` (couldn't complete) `· NOT RUN · MANUAL PENDING · MAIN REPO · BLOCKED` (needs QA writes).
+- A test belongs to a TC through its `tc` annotation (`tc('AD-SEC-001')` from `utils/tc.js`). Several tests
+  can share a TC (sub-checks, browsers): the row aggregates them, and any failure makes it FAIL.
+  Specs can add a measured value or notes with `recordTc(testInfo, { measured, notes })`.
+- Results **merge**: rerunning a few TCs (`-g "AD-SEC-001 "`) updates only those rows. Only the final
+  attempt after retries counts.
+- Manual TCs: add a row to `Test-case-csv/manual-results.csv`, then `npm run results` (no test run needed).
+  For `auto+manual` TCs the automated result stays and the manual sign-off is added to the notes.
+- Passing `--reporter=…` on the CLI replaces the configured reporters; add
+  `./reporters/sheet-reporter.js` to it if you want the sheets updated.
+- `Swasthx_HIP_Frontend/` (the main project) may sit in this folder for local reference only. It is
+  gitignored, and nothing here imports from it.
+
 ## Adding a spec from a TC ID
 
 ID scheme: `<MODULE>-<TYPE>-###` (module codes `SA AD RCP DOC DIAG PH`) or `GEN-<TYPE>-###` for
-app-wide. Types: `FUN BIZ A11Y WV RUN VIS CMPT SEC RFT`.
+app-wide. Use the TC ID exactly as it appears in `Test-case-csv/`.
 
 1. Pick the folder for the type (`FUN`→`functional`, `BIZ`→`business-logic`, `A11Y`→`accessibility`,
    `WV`→`web-vitals`, `RUN`→`runtime`, `VIS`→`visual`, `CMPT`→`compatibility`, `SEC`→`security`,
